@@ -112,7 +112,7 @@ class db_class {
             this.connection = await mysql.createConnection(this.dbConfig);
                 // Insert the new user
               
-            const [existingRows] = await this.connection.execute('SELECT * FROM users WHERE email = ?', [values[0]]);
+            const [existingRows] = await this.connection.execute('SELECT * FROM User_Details WHERE email = ?', [values[0]]);
             
             if (existingRows.length > 0) {
                 console.log('Duplicate entry error: Email already exists.');

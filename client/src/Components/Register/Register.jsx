@@ -60,7 +60,9 @@ const Register = () => {
         setOtpNumber(newNumber);
         console.log("Sending OTP:", newNumber); 
         Axios.post("http://localhost:3002/otp", {
-            OTP: newNumber
+            OTP: newNumber,
+            Email: email
+
         }).then((response) => {
             console.log("Response from OTP API:", response.data); 
         }).catch((error) => {

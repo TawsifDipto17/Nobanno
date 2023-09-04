@@ -30,7 +30,8 @@ const Forgot = () => {
         }).then((response)=>{
            
             const notify=()=>{
-                toast(response.data.message)
+                toast('An OTP is sent. Login using that OTP')
+                toast( 'Change password from dashboard')
             }
             console.log(response.data.message)
             if(response.data.message=='An OTP is sent. Login using that OTP' ){
@@ -69,14 +70,14 @@ const Forgot = () => {
 
             <form className='fform' onSubmit={onSubmit}>
 
-                <div className='finput'>
+                {/* <div className='finput'>
                     <label htmlFor='text' ></label>
                     <div>
                         <input className='finput' type='text' id='text' placeholder='Enter Username' onChange={(event)=>{
                                     login_setUser(event.target.value)
                                 }}/>
                     </div>
-                </div>
+                </div> */}
 
                 <div className='finput'>
                     <label htmlFor='email' ></label>

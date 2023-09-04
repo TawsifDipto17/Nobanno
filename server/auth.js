@@ -21,7 +21,7 @@ app.post('/register', (req, res) => {
     console.log(sentEmail)
     console.log(sentPassword)
 
-    const SQL = "Insert Into users (email, username, password_hash) values (?,?,sha(?))"
+    const SQL = "Insert Into User_Details (email, username, password) values (?,?,sha(?))"
     const Values = [sentEmail, sentUserName, sentPassword];
 
 
@@ -57,7 +57,7 @@ app.post('/login', (req, res) => {
 
     console.log(sentEmail)
 
-    const SQL = "Select * from users where email=? and password_hash=sha(?)"
+    const SQL = "Select * from User_Details where email=? and password=sha(?)"
     const Values = [sentEmail, sentPassword];
 
 
@@ -86,7 +86,9 @@ app.post('/login', (req, res) => {
 
 app.post('/otp', (req, res) => {
 const sentOTP = req.body.OTP
-email.mail(sentOTP)
+const sentEmail=req.body.Email
+email.mail(sentOTP,sentEmail)
+
 
 })
 
@@ -105,14 +107,14 @@ const createOTP = () => {
 
 app.post('/forgot', (req, res) => {
     
-    const sentUser = req.body.LoginUser
+  
     const sentEmail = req.body.LoginEmail
 
     
     let otp= createOTP();
 
-    const SQL = "UPDATE users SET password_hash = SHA(?) WHERE username = ? AND email = ?"
-    const Values = [otp,sentUser, sentEmail];
+    const SQL = "UPDATE User_Details SET password = SHA(?) WHERE email = ?"
+    const Values = [otp,sentEmail];
 
 
 
@@ -120,8 +122,8 @@ app.post('/forgot', (req, res) => {
     const db = new db_class('test');
 
 
-    console.log(sentUser)
-    console.log(sentEmail)
+   
+  
 
 
     
@@ -140,7 +142,7 @@ app.post('/forgot', (req, res) => {
             res.status(500).send({ message: 'Error during connecting server' });
         });
         console.log("Changed Password: "+otp)
-        email.mail(otp)
+        email.mail(otp,sentEmail)
 })
 
 

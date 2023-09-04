@@ -13,11 +13,11 @@ const transporter = nodemailer.createTransport({
 
 
 
-function mail(OTP){
+function mail(OTP,Email){
 
  const mailOptions = {
     from: 'adcommerce247@gmail.com', 
-    to: 'mehediahamed@iut-dhaka.edu', 
+    to: Email, 
     subject: 'OTP',
     text:OTP
 };
