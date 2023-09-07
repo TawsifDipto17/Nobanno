@@ -199,3 +199,22 @@ video {
   opacity: 1;
 }
 /*# sourceMappingURL=App.css.map */
+
+.dashboard{
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+}
+
+.dashboard .dashboardContainer{
+  height: 95vh;
+  width: 95%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgb(194, 194, 194);
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
