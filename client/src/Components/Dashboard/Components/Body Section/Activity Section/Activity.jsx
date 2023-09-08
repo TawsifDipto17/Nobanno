@@ -3,14 +3,15 @@ import './activity.css'
 import {BsArrowRightShort} from 'react-icons/bs'
 
 import user from '../../../Asset/admin.svg'
+import link from '../../../Asset/link.png'
 
 const Activity = () => {
   return (
     <div className="activitySection">
       <div className="heading flex">
-        <h1>Recent Activity</h1>
+        <h1>প্রয়োজনীয় লিংকসমূহ</h1>
         <button className='btn flex'>
-          See All
+          আরো দেখুন
           <BsArrowRightShort className='icon'/>
         </button>
       </div>
@@ -18,54 +19,44 @@ const Activity = () => {
       <div className="secContainer grid">
 
         <div className="singleCustomer flex">
-          <img src={user} alt="Customer" />
+          <img src={link} alt="Customer" />
           <div className="customerDetails">
             <span className='name'>
-              Faisal Ahmed
+              কৃষি মন্ত্রণালয়
             </span>
-            <small>Ordered a new plant</small>
+            <a href="https://moa.gov.bd/">https://moa.gov.bd/</a>
           </div>
-          <div className="duration">
-            2 min ago
+          
+        </div>
+
+        <div className="singleCustomer flex">
+          <img src={link} alt="Customer" />
+          <div className="customerDetails">
+            <span className='name'>
+              ব্রি নলেজ কর্নার
+            </span>
+            <a href="http://knowledgebank-brri.org/">http://knowledgebank-brri.org/</a>
           </div>
         </div>
 
         <div className="singleCustomer flex">
-          <img src={user} alt="Customer" />
+          <img src={link} alt="Customer" />
           <div className="customerDetails">
             <span className='name'>
-              Faisal Ahmed
+              কৃষি আবহাওয়া
             </span>
-            <small>Ordered a new plant</small>
+             <a href="https://www.bamis.gov.bd/">https://www.bamis.gov.bd/</a>
           </div>
-          <div className="duration">
-            2 min ago
-          </div>
+          
         </div>
 
         <div className="singleCustomer flex">
-          <img src={user} alt="Customer" />
+          <img src={link} alt="Customer" />
           <div className="customerDetails">
             <span className='name'>
-              Faisal Ahmed
+              কৃষি গবেষণা ফাউন্ডেশন
             </span>
-            <small>Ordered a new plant</small>
-          </div>
-          <div className="duration">
-            2 min ago
-          </div>
-        </div>
-
-        <div className="singleCustomer flex">
-          <img src={user} alt="Customer" />
-          <div className="customerDetails">
-            <span className='name'>
-              Faisal Ahmed
-            </span>
-            <small>Ordered a new plant</small>
-          </div>
-          <div className="duration">
-            2 min ago
+            <a href="http://www.kgf.org.bd/">http://www.kgf.org.bd/</a>
           </div>
         </div>
 

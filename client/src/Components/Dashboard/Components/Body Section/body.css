@@ -3,6 +3,7 @@
   height: 100%;
   padding: 2rem;
   overflow: auto;
+  background: hsl(220,10%,94%);
 }
 .mainContent .bottom {
   margin-top: 2rem;

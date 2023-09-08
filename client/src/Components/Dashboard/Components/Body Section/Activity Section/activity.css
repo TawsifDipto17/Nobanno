@@ -48,10 +48,10 @@
   width: 40px;
   height: 40px;
   -o-object-fit: cover;
-     object-fit: cover;
+     object-fit: contain;
   border-radius: 50%;
-  box-shadow: 0 2px 4px var(--itemCardColor);
-  margin-right: 1rem;
+  /* box-shadow: 0 2px 4px var(--itemCardColor); */
+  margin-right: 0.5rem;
 }
 .activitySection .secContainer .singleCustomer .customerDetails {
   flex: 1;
@@ -62,10 +62,14 @@
   color: var(--blackColor);
   display: block;
 }
-.activitySection .secContainer .singleCustomer .customerDetails small {
-  font-weight: 500;
-  color: var(--textColor);
-  font-size: var(--smallFontSize);
+
+.activitySection .secContainer .singleCustomer .customerDetails a {
+  color: var(--blackColor);
+  text-decoration: underline;
+}
+
+.activitySection .secContainer .singleCustomer .customerDetails a:hover {
+  color: var(--PrimaryColor);
 }
 .activitySection .secContainer .singleCustomer .duration {
   color: var(--textColor);

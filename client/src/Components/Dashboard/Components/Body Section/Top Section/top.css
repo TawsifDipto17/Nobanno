@@ -155,34 +155,36 @@
   bottom: 0;
   border-radius: 1rem;
 }
-.topSection .cardSection .leftCard .main .textDiv {
+.topSection .cardSection .leftCard .main .textdiv {
   z-index: 100;
+  
 }
-.topSection .cardSection .leftCard .main .textDiv h1 {
+.topSection .cardSection .leftCard .main .textdiv h1 {
+  /* text-align: left; */
   font-size: var(--h1FontSize);
   padding-bottom: 1rem;
   color: var(--blackColor);
 }
-.topSection .cardSection .leftCard .main .textDiv .flex {
+.topSection .cardSection .leftCard .main .textdiv .flex {
   gap: 1.5rem;
   font-weight: 500;
   color: var(--blackColor);
 }
-.topSection .cardSection .leftCard .main .textDiv .flex small {
+.topSection .cardSection .leftCard .main .textdiv .flex small {
   font-size: var(--normalFontSize);
   display: block;
   color: var(--PrimaryColor);
   font-weight: 500;
-  padding: 0.5rem 0;
+  
 }
-.topSection .cardSection .leftCard .main .textDiv .link {
+.topSection .cardSection .leftCard .main .textdiv .link {
   margin-top: 2rem;
   cursor: pointer;
 }
-.topSection .cardSection .leftCard .main .textDiv .link:hover {
+.topSection .cardSection .leftCard .main .textdiv .link:hover {
   color: var(--PrimaryColor);
 }
-.topSection .cardSection .leftCard .main .textDiv .link:hover .icon {
+.topSection .cardSection .leftCard .main .textdiv .link:hover .icon {
   transform: translateX(10px);
   transition: 0.3s ease;
 }
@@ -191,10 +193,12 @@
 }
 .topSection .cardSection .leftCard .main .imgDiv img {
   width: 200px;
+  height: auto;
 }
 .topSection .cardSection .leftCard .sideBarCard {
   display: none;
   width: 100%;
+  height: auto;
   padding: 1rem;
   text-align: center;
   position: relative;
@@ -327,3 +331,4 @@
     font-size: var(--h2FontSize);
   }
 }/*# sourceMappingURL=top.css.map */
+

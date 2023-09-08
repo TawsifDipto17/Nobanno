@@ -10,6 +10,8 @@ import tomato from '../../../Asset/tomato_plant.png'
 import rose from '../../../Asset/rose.png'
 import img2 from '../../../Asset/news1.jpg'
 import img3 from '../../../Asset/news2.jpg'
+import img4 from '../../../Asset/blog1.png'
+import img5 from '../../../Asset/blog2.png'
 const Listing = () => {
   return (
     <div className="listingSection">
@@ -87,26 +89,39 @@ const Listing = () => {
 
         <div className="featuredSellers">
           <div className="heading flex">
-            <h3>Featured Sellers</h3>
+            <h3>আজকের ব্লগ </h3>
             <button className='btn flex'>
-            See All <BsArrowRightShort className='icon'/>
+            আরো দেখুন <BsArrowRightShort className='icon'/>
             </button>
           </div>
 
           <div className="card flex">
             <div className="users">
-              <img src={img2} alt="seller" />
+              
               {/* <img src={img2} alt="seller" />
               <img src={img2} alt="seller" />
               <img src={img2} alt="seller" /> */}
+              <img src={img4} alt="blog" />
             </div>
             <div className="cardText">
               <span>
-                28,556 Plants Sold <br />
-                <small>
-                  26 Sellers <span className='date'>31 Days
-                  </span>
-                </small>
+              <a href="https://krishibangla.net/%e0%a6%9f%e0%a6%ac%e0%a7%87-%e0%a6%95%e0%a6%b0%e0%a6%b2%e0%a6%be-%e0%a6%9a%e0%a6%be%e0%a6%b7-%e0%a6%aa%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%a4%e0%a6%bf/">
+                টবে করলা চাষ পদ্ধতি </a><br />
+              </span>
+            </div>
+          </div>
+          <div className="card flex">
+            <div className="users">
+              
+              {/* <img src={img2} alt="seller" />
+              <img src={img2} alt="seller" />
+              <img src={img2} alt="seller" /> */}
+              <img src={img5} alt="blog" />
+            </div>
+            <div className="cardText">
+              <span>
+              <a href="https://krishibangla.net/%e0%a6%9f%e0%a6%ae%e0%a7%87%e0%a6%9f%e0%a7%8b-%e0%a6%97%e0%a6%be%e0%a6%9b%e0%a7%87%e0%a6%b0-%e0%a6%a8%e0%a6%be%e0%a6%ac%e0%a6%bf-%e0%a6%a7%e0%a7%8d%e0%a6%ac%e0%a6%b8%e0%a6%be-%e0%a6%b0%e0%a7%8b/">
+              টমেটো গাছের নাবি ধ্বসা রোগ </a><br />
               </span>
             </div>
           </div>

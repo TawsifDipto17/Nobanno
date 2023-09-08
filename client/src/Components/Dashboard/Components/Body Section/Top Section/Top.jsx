@@ -49,25 +49,28 @@ const Top = () => {
 
         <div className="leftCard flex">
           <div className="main flex">
-            <div className="textDiv">
-              <h1>My Stat</h1>
+            <div className="textdiv">
+              <h1>বিবরণী</h1>
 
               <div className="flex">
                 <span>
-                  Today <br /> <small>4 Orders</small>
+                  আজঃ <br /> <small>৪ টি অর্ডার</small>
                 </span>
                 <span>
-                  This Month <br /> <small>175 Orders</small>
+                  এই মাসেঃ <br /> <small>১৭৫ টি অর্ডার</small>
                 </span>
               </div>
 
               <span className='flex link'>
-                Go to my orders <BsArrowRightShort
+                আরো দেখুন <BsArrowRightShort
                   className='icon' />
               </span>
 
+              
+
 
             </div>
+            
 
             <div className="imgDiv">
               <img src={img2} alt="Tree image" />

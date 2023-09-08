@@ -19,11 +19,13 @@
   --smallestFontSize: 0.75rem;
 }
 
+
 .listingSection {
   flex-basis: 70%;
 }
 .listingSection .heading {
   width: 100%;
+  height: auto;
   justify-content: space-between;
 }
 .listingSection .heading h1 {
@@ -40,6 +42,7 @@
 }
 .listingSection .secContainer {
   width: 100%;
+  height: auto;
   margin: 1rem 0;
   gap: 1rem;
   flex-wrap: wrap;
@@ -61,7 +64,8 @@
   box-shadow: 0 2px 2px var(--inputColor);
 }
 .listingSection .secContainer .singleItem img {
-  max-width: 100px;
+  width: 100px;
+  height: 125px;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -108,15 +112,18 @@
      object-fit: cover;
   border: 2px solid var(--inputColor);
   transition: 0.5s ease;
+  
 }
 .listingSection .sellers .topSellers .card .users img:hover, .listingSection .sellers .featuredSellers .card .users img:hover {
   transform: scale(1.1);
 }
-.listingSection .sellers .topSellers .card .cardText span, .listingSection .sellers .featuredSellers .card .cardText span {
+.listingSection .sellers .topSellers .card .cardText span a, .listingSection .sellers .featuredSellers .card .cardText span a {
+  text-decoration: none;
   color: var(--blackColor);
   font-weight: 900;
 }
-.listingSection .sellers .topSellers .card .cardText span:hover, .listingSection .sellers .featuredSellers .card .cardText span:hover {
+.listingSection .sellers .topSellers .card .cardText span a:hover, .listingSection .sellers .featuredSellers .card .cardText span a:hover {
+  
   color: var(--PrimaryColor);
   cursor: pointer;
 }
@@ -126,6 +133,7 @@
 .listingSection .sellers .topSellers .card .cardText span small .date, .listingSection .sellers .featuredSellers .card .cardText span small .date {
   margin-left: 1rem;
 }
+
 
 @media screen and (max-width: 990px) {
   .listingSection .sellers .card {
