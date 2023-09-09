@@ -20,10 +20,10 @@ import { isEmailValid } from '../../js/email_checker.js'
 const Register = () => {
 
 
-    const email_notify = () => toast('Check again. Invalid email format!!!');
-    const otp_invalid = () => toast('Invalid OTP...Try Again');
-    const blank_user = () => toast('Username field is empty!!!');
-    const blank_pass = () => toast('Password field is empty!!!');
+    const email_notify = () => toast('অকার্যকর ইমেইল ফরম্যাট!!!');
+    const otp_invalid = () => toast('ভুল ওটিপি...আবার চেষ্টা করুন!!!');
+    const blank_user = () => toast('ব্যবহারকারীর নাম ফিল্ড খালি!!!');
+    const blank_pass = () => toast('পাসওয়ার্ড ফিল্ড খালি!!!');
 
 
 
@@ -109,20 +109,25 @@ const Register = () => {
            
         }).then((response) => {
 
-    
+            const notify_a=()=>{
+                toast('স্বাগতম!')
+            }
+            const notify_b=()=>{
+                toast('ইমেইল ইতিমধ্যে বিদ্যমান। ব্যবহারকারী সংযুক্ত হয়নি!!!')
+            }
             const notify = () => toast(response.data.message);
             
             if (response.data.message == 'Email Exists. User not added!!!') {
                 
                 flag=false
-                notify()
+                notify_b()
                 navigateTo('/register')
 
 
 
             }
            else{
-                notify()
+                notify_a()
                 navigateTo('/dashboard')
             }
             
@@ -146,16 +151,16 @@ const Register = () => {
                 <div className="videoDiv">
                     <video src={video} autoPlay muted loop></video>
                     <div className="textDiv">
-                        <h2 className='title'>Create and sell extra ordinary product</h2>
-                        <p>Adopt the peace of nature!</p>
+                    <h2 className='title'>সবুজ পৃথিবীতে স্বাগতম</h2>
+                        <p>প্রকৃতির পুনর্জীবন উপভোগ করুন!</p>
                     </div>
 
 
 
                     <div className="footerDiv flex">
-                        <span className='text'>Already have an account?</span>
+                        <span className='text'>ইতিমধ্যে একটি অ্যাকাউন্ট আছে?</span>
                         <Link to={'/login'}>
-                            <button className='btn'>Log In</button>
+                            <button className='btn'>প্রবেশ করুন</button>
                         </Link>
                     </div>
                 </div>
@@ -165,7 +170,7 @@ const Register = () => {
 
                     </div>
                     <div className="headerDiv">
-                        <h2 className='knowYou'>Let Us Know You!</h2>
+                        <h2 className='knowYou'>আপনার সম্পর্কে জানান!</h2>
                     </div>
 
                     <form action="" className='form grid'>
@@ -173,10 +178,10 @@ const Register = () => {
 
 
                         <div className="inputDiv">
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">ইমেইল</label>
                             <div className=" input flex">
                                 <AiTwotoneMail className='icon' />
-                                <input type='email' id='email' placeholder='Enter Email' onChange={(event) => {
+                                <input type='email' id='email' placeholder='ইমেইল প্রবেশ করুন' onChange={(event) => {
 
                                     setEmail(event.target.value)
 
@@ -184,7 +189,7 @@ const Register = () => {
 
                                 <button type="submit" className='btnOTP' onClick={sendOTP}>
 
-                                    <span>Send OTP</span>
+                                    <span>ওটিপি পাঠান</span>
 
                                 </button>
 
@@ -194,10 +199,10 @@ const Register = () => {
 
 
                         <div className="inputDiv">
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username">ব্যবহারকারীর নাম</label>
                             <div className=" input flex">
                                 <FaUserShield className='icon' />
-                                <input type='text' id='username' placeholder='Enter Username' onChange={(event) => {
+                                <input type='text' id='username' placeholder='ব্যবহারকারীর নাম প্রবেশ করুন' onChange={(event) => {
                                     setUsername(event.target.value)
                                 }} />
                             </div>
@@ -208,11 +213,11 @@ const Register = () => {
 
 
                         <div className="inputDiv">
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password">পাসওয়ার্ড</label>
                             <div className=" input flex">
 
                                 <BsFillShieldLockFill className='icon' />
-                                <input type='password' id='password' placeholder='Enter Password' onChange={(event) => {
+                                <input type='password' id='password' placeholder='পাসওয়ার্ড প্রবেশ করুন' onChange={(event) => {
                                     setPassword(event.target.value)
                                     
                                 }
@@ -229,10 +234,10 @@ const Register = () => {
 
 
                         <div className="inputDiv">
-                            <label htmlFor="otp">OTP</label>
+                            <label htmlFor="otp">ওটিপি</label>
                             <div className=" input flex">
                                 <IoAppsSharp className='icon' />
-                                <input type='text' id='otp' placeholder='Enter 4 digit OTP' onChange={(event) => {
+                                <input type='text' id='otp' placeholder='৪ সংখ্যার ওটিপি প্রদান করুন' onChange={(event) => {
                                     setInputOtp(event.target.value)
                                 }}
                                 />
@@ -240,7 +245,7 @@ const Register = () => {
                         </div>
                         <div>
                             <button type="submit" className='btn flex' onClick={createUser}>
-                                <span>Sign Up</span>
+                                <span>নিবন্ধন করুন</span>
                                 <AiOutlineSwapRight className="icon" />
                             </button>
 

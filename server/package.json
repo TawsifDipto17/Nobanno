@@ -5,7 +5,7 @@
   "description": "",
   "main": "auth.js", 
   "scripts": {
-    "start": "node auth.js", 
+    "start": "concurrently \"node auth.js\"  \"node disease.js\"  \"node crop.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -7,7 +7,35 @@ class db_class {
         
     }
 
-  
+    async GetSelect(sql, values) {
+        this.query = sql;
+        this.values = values;
+      
+        try {
+          this.connection = await mysql.createConnection(this.dbConfig);
+      
+          const [result] = await this.connection.execute(this.query,this.values);
+      
+          if (result.length > 0) {
+            return result; // Return the query data when it's successful
+          } else {
+            return []; // Return an empty array if no data is found (optional)
+          }
+        } catch (err) {
+          console.error('Error:', err);
+          return false; // Return false to indicate an error
+        } finally {
+          if (this.connection) {
+            try {
+              this.connection.end();
+            } catch (err) {
+              console.error('Error closing connection:', err);
+              return false; // Return false in case of connection closure error
+            }
+          }
+        }
+      }
+      
 
     async Select(sql, values) {
         this.query = sql;

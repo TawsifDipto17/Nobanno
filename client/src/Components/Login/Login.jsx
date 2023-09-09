@@ -28,17 +28,21 @@ const Login = () => {
 
         }).then((response)=>{
            
-            const notify=()=>{
-                toast(response.data.message)
+            const notify_a=()=>{
+                toast('ব্যবহারকারী পাওয়া গিয়েছে!')
+                toast('স্বাগতম!')
+            }
+            const notify_b=()=>{
+                toast('ব্যবহারকারী খুঁজে পাওয়া যায়নি!')
             }
             console.log(response.data.message)
             if(response.data.message=='User not found!' ){
-                notify();
+                notify_b();
                 navigateTo('/login')
                 // setLoginStatus('Credentials Don`t Exist!')
             }
             else{
-                notify();
+                notify_a();
                 navigateTo('/dashboard')
             }
         })
@@ -46,16 +50,6 @@ const Login = () => {
     
        
 
-    // useEffect(()=>{
-    //     if(loginStatus!=='')
-    //     {
-    //         setStatusHolder('showMessage')
-    //         setTimeout(() => {
-    //             setStatusHolder('message') 
-            
-    //         }, 3000);
-    //     }
-    // },[loginStatus])
 
 
     const onSubmit=()=>{
@@ -75,16 +69,16 @@ const Login = () => {
                 <div className="videoDiv">
                     <video src={video} autoPlay muted loop></video>
                     <div className="textDiv">
-                        <h2 className='title'>Create and sell extra ordinary product</h2>
-                        <p>Adopt the peace of nature!</p>
+                        <h2 className='title'>সবুজ পৃথিবীতে স্বাগতম</h2>
+                        <p>প্রকৃতির পুনর্জীবন উপভোগ করুন!</p>
                     </div>
 
 
 
                     <div className="footerDiv flex">
-                        <span className='text'>Don't have an account?</span>
+                        <span className='text'>আপনার কোন একাউন্ট নেই?</span>
                         <Link to={'/register'}>
-                            <button className='btn'>Sign Up</button>
+                            <button className='btn'>নিবন্ধন করুন</button>
                         </Link>
                     </div>
                 </div>
@@ -95,16 +89,16 @@ const Login = () => {
                     </div>
                     
                     <div className="headerDiv">
-                        <h2 className='knowYou'>Welcome!</h2>
+                        <h2 className='knowYou'>স্বাগতম!</h2>
                     </div>
 
                     <form onSubmit={onSubmit} className='form grid'>
                        
                         <div className="inputDiv">
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">ইমেইল</label>
                             <div className=" input flex">
                                 <AiTwotoneMail className='icon' />
-                                <input type='email' id='email' placeholder='Enter Email' 
+                                <input type='email' id='email' placeholder='ইমেইল প্রবেশ করুন' 
                                 onChange={(event)=>{
                                     login_setEmail(event.target.value)
                                 }}/>
@@ -113,24 +107,24 @@ const Login = () => {
 
 
                         <div className="inputDiv">
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password">পাসওয়ার্ড</label>
                             <div className=" input flex">
                                 <BsFillShieldLockFill className='icon' />
-                                <input type='password' id='password' placeholder='Enter Password' 
+                                <input type='password' id='password' placeholder='পাসওয়ার্ড প্রবেশ করুন' 
                                    onChange={(event)=>{
                                     login_setPassword(event.target.value)
                                 }}/>
                             </div>
                         </div>
                         <button type="submit" className='btn flex' onClick={loginUser}>
-                            <span>Login</span>
+                            <span>প্রবেশ করুন</span>
                             <AiOutlineSwapRight className="icon"/>
                         </button>
                         <span className='forgotPassword'>
                         
-                            Forgot your password?
+                        আপনি কি পাসওয়ার্ড ভুলে গেছেন?
                         <Link to={'/forgot'}>
-                            <p>Click Here</p>
+                            <p>এখানে ক্লিক করুন</p>
                         </Link >
                         </span>
                     </form>

@@ -30,8 +30,8 @@ const Forgot = () => {
         }).then((response)=>{
            
             const notify=()=>{
-                toast('An OTP is sent. Login using that OTP')
-                toast( 'Change password from dashboard')
+                toast('একটি ওটিপি প্রেরিত করা হয়েছে। ওটিপি ব্যবহার করে লগইন করুন')
+                toast( 'ড্যাশবোর্ড থেকে পাসওয়ার্ড পরিবর্তন করুন')
             }
             console.log(response.data.message)
             if(response.data.message=='An OTP is sent. Login using that OTP' ){
@@ -54,17 +54,17 @@ const Forgot = () => {
             <div className="fvideoDiv">
                 <video src={video} autoPlay muted loop></video>
                 <div className="textDiv">
-                    <h2 className='title'>Create and sell extra ordinary product</h2>
-                    <p>Adopt the peace of nature!</p>
-                </div>
+                <h2 className='title'>সবুজ পৃথিবীতে স্বাগতম</h2>
+                    <p>প্রকৃতির পুনর্জীবন উপভোগ করুন!</p>                
+                    </div>
             </div>
             <div className="fbutton-container">
                 <Link to={'/login'}>
-                <button className="fbutton">Login</button>
+                <button className="fbutton">প্রবেশ করুন</button>
                 </Link>
 
                 <Link to={'/register'}>
-                <button className="fbutton">Sign Up</button>
+                <button className="fbutton">নিবন্ধন করুন</button>
                 </Link>
             </div>
 
@@ -82,13 +82,13 @@ const Forgot = () => {
                 <div className='finput'>
                     <label htmlFor='email' ></label>
                     <div>
-                        <input className='finput' type='email' id='email' placeholder='Enter Email' onChange={(event)=>{
+                        <input className='finput' type='email' id='email' placeholder='আপনার ইমেইল প্রবেশ করুন' onChange={(event)=>{
                                     login_setEmail(event.target.value)
                                 }}/>
                     </div>
                 </div>
 
-                <div><button className='Submit' type='submit' onClick={forgotPass}>Submit</button></div>
+                <div><button className='Submit' type='submit' onClick={forgotPass}>জমা দিন</button></div>
 
             </form>
         </div>

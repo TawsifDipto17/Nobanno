@@ -1,5 +1,6 @@
 import React from 'react'
 import './sidebar.css'
+import { Link , useNavigate} from 'react-router-dom'
 
 import logo from '../../Asset/logo1.png'
 import {IoMdSpeedometer} from 'react-icons/io'
@@ -32,7 +33,7 @@ const Sidebar = () => {
         <ul className="menuLists grid">
 
           <li className="listItem">
-            <a href="#" className='menuLink flex'>
+            <a href="/dashboard" className='menuLink flex'>
               <IoMdSpeedometer className="icon"/>
               <span className="smallText">
                 ড্যাশবোর্ড 
@@ -41,7 +42,7 @@ const Sidebar = () => {
           </li>
 
           <li className="listItem">
-            <a href="#" className='menuLink flex'>
+            <a href="/chasabad" className='menuLink flex'>
               <GiFarmer className="icon"/>
               <span className="smallText">
                 চাষাবাদ
@@ -50,7 +51,7 @@ const Sidebar = () => {
           </li>
 
           <li className="listItem">
-            <a href="#" className='menuLink flex'>
+            <a href="/rogbalai" className='menuLink flex'>
               <RiVirusLine className="icon"/>
               <span className="smallText">
                 রোগবালাই
