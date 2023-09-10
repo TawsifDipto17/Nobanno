@@ -1,9 +1,8 @@
-
 {
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "auth.js", 
+  "main": "auth.js",
   "scripts": {
     "start": "concurrently \"node auth.js\"  \"node disease.js\"  \"node crop.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.4.0",
+    "concurrently": "^8.2.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mysql2": "^3.6.0",
