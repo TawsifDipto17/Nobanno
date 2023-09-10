@@ -28,25 +28,25 @@ const Listing = () => {
         <div className="singleItem">
           <AiFillHeart className='icon'/>
             <img src={paddy} alt="listPlant" />
-            <h3>ধান </h3>
+            <h3><a href="/chasabad">ধান </a></h3>
         </div>
 
         <div className="singleItem">
           <AiOutlineHeart className='icon'/>
             <img src={potato} alt="listPlant" />
-            <h3>আলু</h3>
+            <h3><a href="/chasabad">আলু</a></h3>
         </div>
 
         <div className="singleItem">
           <AiOutlineHeart className='icon'/>
             <img src={tomato} alt="listPlant" />
-            <h3>টমেটো</h3>
+            <h3><a href="/chasabad">টমেটো</a></h3>
         </div>
 
         <div className="singleItem">
           <AiOutlineHeart className='icon'/>
             <img src={rose} alt="listPlant" />
-            <h3>গোলাপ</h3>
+            <h3><a href="/chasabad">গোলাপ</a></h3>
         </div>
 
       </div>

@@ -8,6 +8,7 @@ import { BsArrowRightShort, BsQuestionCircle } from 'react-icons/bs'
 import img from '../../../Asset/admin.svg'
 import img2 from '../../../Asset/tree.png'
 import video from '../../../Asset/sunsetvideo.mp4'
+import WeatherWidget from '../../../weather'
 
 
 const Top = () => {
@@ -49,7 +50,7 @@ const Top = () => {
 
         <div className="leftCard flex">
           <div className="main flex">
-            <div className="textdiv">
+            {/* <div className="textdiv">
               <h1>বিবরণী</h1>
 
               <div className="flex">
@@ -69,7 +70,11 @@ const Top = () => {
               
 
 
+            </div> */}
+            <div className="weather">
+            <WeatherWidget/>
             </div>
+           
             
 
             <div className="imgDiv">
