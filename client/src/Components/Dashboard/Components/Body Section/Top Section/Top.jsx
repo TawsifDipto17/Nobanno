@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './top.css'
 import { BiSearchAlt } from 'react-icons/bi'
 import { TbMessageCircle } from 'react-icons/tb'
@@ -10,8 +10,10 @@ import img2 from '../../../Asset/tree.png'
 import video from '../../../Asset/sunsetvideo.mp4'
 import WeatherWidget from '../../../weather'
 
+ 
 
 const Top = () => {
+  const[openProfile, setOpenProfile] = useState(false);
   return (
     <div className="topSection">
       <div className="headerSection flex">
@@ -27,9 +29,39 @@ const Top = () => {
         <div className="adminDiv flex">
           <TbMessageCircle className="icon" />
           <MdOutlineNotificationsNone className="icon" />
-          <div className="adminImage">
-            <img src={img} alt='Admin Image' />
+          <div className="adminImage" onClick={()=> setOpenProfile((prev)=>!prev)}>
+            <img src={img} alt='Admin Image' /> 
           </div>
+
+          {
+            openProfile && (
+              <div className="dropdown-menu">
+            <h3>
+              Dipto <br />
+              <span>Kire kire</span>
+              </h3>
+              <ul>
+                <li className='dropdownItem'>
+                  <img src={img} alt="" />
+                  <a href="#">My Profile</a>
+                </li>
+
+                <li className='dropdownItem'>
+                  <img src={img} alt="" />
+                  <a href="#">Logout</a>
+                </li>
+              </ul>
+           
+          </div>
+
+            )
+          }
+          
+          
+          
+          
+          
+          
         </div>
 
       </div>
