@@ -3,6 +3,7 @@ import './listing.css'
 import {BsArrowRightShort} from 'react-icons/bs'
 import {AiFillHeart} from 'react-icons/ai'
 import { AiOutlineHeart } from 'react-icons/ai'
+import { Link , useNavigate} from 'react-router-dom'
 
 import paddy from '../../../Asset/Paddy.png'
 import potato from '../../../Asset/potato.png'
@@ -24,24 +25,31 @@ const Listing = () => {
       </div>
 
       <div className="secContainer flex">
-        
+      
+      <Link to={'/chasabad'}>
         <div className="singleItem">
+        
           <AiFillHeart className='icon'/>
             <img src={paddy} alt="listPlant" />
             <h3><a href="/chasabad">ধান </a></h3>
         </div>
+        </Link>
 
+        <Link to={'/chasabad'}>
         <div className="singleItem">
           <AiOutlineHeart className='icon'/>
             <img src={potato} alt="listPlant" />
             <h3><a href="/chasabad">আলু</a></h3>
         </div>
+        </Link>
 
+        <Link to={'/chasabad'}>
         <div className="singleItem">
           <AiOutlineHeart className='icon'/>
             <img src={tomato} alt="listPlant" />
             <h3><a href="/chasabad">টমেটো</a></h3>
         </div>
+        </Link>
 
         <div className="singleItem">
           <AiOutlineHeart className='icon'/>
