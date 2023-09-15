@@ -4,6 +4,7 @@ import Crop from './Components/Features/Chasabad/Crop/Crop'
 import Dashboard from './Components/Dashboard/Dashboard'
 import Chasabad from './Components/Features/Chasabad/Dashboard/Chasabad'
 import Disease from './Components/Features/Rogbalai/Crop/Disease'
+import Profile from './Components/Dashboard/UserProfile'
 
 import Login from './Components/Login/Login'
 import Register from './Components/Register/Register'
@@ -50,6 +51,10 @@ const router= createBrowserRouter([
   {
     path:'/disease',
     element: <div><Disease/></div>
+  },
+  {
+    path:'/profile',
+    element: <div><Profile/></div>
   }
 ])
 function App() {

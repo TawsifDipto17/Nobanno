@@ -4,6 +4,7 @@ import { BiSearchAlt } from 'react-icons/bi'
 import { TbMessageCircle } from 'react-icons/tb'
 import { MdOutlineNotificationsNone } from 'react-icons/md'
 import { BsArrowRightShort, BsQuestionCircle } from 'react-icons/bs'
+import { Link , useNavigate} from 'react-router-dom'
 
 import img from '../../../Asset/admin.svg'
 import img2 from '../../../Asset/tree.png'
@@ -38,13 +39,16 @@ const Top = () => {
               <div className="dropdown-menu">
             <h3>
               Dipto <br />
-              <span>Kire kire</span>
+              <span>General User</span>
               </h3>
               <ul>
+
+                <Link to={'/profile'}>
                 <li className='dropdownItem'>
                   <img src={img} alt="" />
                   <a href="#">My Profile</a>
                 </li>
+                </Link>
 
                 <li className='dropdownItem'>
                   <img src={img} alt="" />
