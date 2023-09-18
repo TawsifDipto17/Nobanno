@@ -11,7 +11,11 @@ import { AiTwotoneMail } from 'react-icons/ai'
 
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// Data store function
+function store(email) {
+    localStorage.setItem('email', email);
 
+  }
 const Officer_Login = () => {
     const [login_email,login_setEmail]=useState('')
     const [login_password,login_setPassword]=useState('')
@@ -43,6 +47,7 @@ const Officer_Login = () => {
             }
             else{
                 notify_a();
+                store(login_email)
                 navigateTo('/officer_dashboard')
             }
         })

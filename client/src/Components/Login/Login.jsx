@@ -12,6 +12,15 @@ import { AiTwotoneMail } from 'react-icons/ai'
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+// Data store function
+function store(email) {
+    localStorage.setItem('email', email);
+
+  }
+  
+
+ 
 const Login = () => {
     const [login_email,login_setEmail]=useState('')
     const [login_password,login_setPassword]=useState('')
@@ -42,6 +51,7 @@ const Login = () => {
                 // setLoginStatus('Credentials Don`t Exist!')
             }
             else{
+                store(login_email);//Data store
                 notify_a();
                 navigateTo('/dashboard')
             }

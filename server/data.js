@@ -5,7 +5,14 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-
+app.listen(3005, () => {
+    console.log('Data Server is running on port 3005');
+  });
+  
+app.post('/officer_advice', (req, res) => {
+    console.log('I am getting email from local storage here')
+    console.log(req.body.LoginEmail)
+  });
 // Sample data (replace with your actual data fetching logic)
 const officerAdviceData = [
   {
@@ -170,6 +177,3 @@ app.get('/officer_advice', (req, res) => {
   res.json(officerAdviceData);
 });
 
-app.listen(3005, () => {
-  console.log('Data Server is running on port 3005');
-});

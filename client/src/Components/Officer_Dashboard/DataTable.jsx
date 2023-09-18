@@ -3,7 +3,18 @@ import axios from 'axios';
 import './DataTable.css'; // Import a separate CSS file for your DataTable styles
 
 const DataTable = () => {
+const email = localStorage.getItem('email');
+
   const [data, setData] = useState([]);
+  axios.post('http://localhost:3005/officer_advice',
+  {
+      LoginEmail: email,
+      
+
+  }).then((response)=>{
+     
+
+  })
 
   useEffect(() => {
     axios.get('http://localhost:3005/officer_advice')

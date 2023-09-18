@@ -1,4 +1,3 @@
-import React from 'react';
 import Sidebar from '../../Dashboard/Components/Sidebar Section/Sidebar';
 import DataTable from './DataTable'; // Import the DataTable component
 

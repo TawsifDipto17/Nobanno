@@ -13,6 +13,9 @@ app.listen(3002, () => {
     console.log('Authentication Server is running on port 3002')
 })
 
+
+
+
 app.post('/register', (req, res) => {
    
 

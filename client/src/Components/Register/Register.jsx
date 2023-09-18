@@ -16,7 +16,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { isEmailValid } from '../../js/email_checker.js'
 
-
+// Data store function
+function store(email) {
+    localStorage.setItem('email', email);
+  
+  }
+  
 const Register = () => {
 
 
@@ -115,7 +120,6 @@ const Register = () => {
             const notify_b=()=>{
                 toast('ইমেইল ইতিমধ্যে বিদ্যমান। ব্যবহারকারী সংযুক্ত হয়নি!!!')
             }
-            const notify = () => toast(response.data.message);
             
             if (response.data.message == 'Email Exists. User not added!!!') {
                 
@@ -128,6 +132,8 @@ const Register = () => {
             }
            else{
                 notify_a()
+                store(email);//Data store
+
                 navigateTo('/dashboard')
             }
             
