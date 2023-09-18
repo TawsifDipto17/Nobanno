@@ -174,7 +174,50 @@ class db_class {
             }
         }
     }
-    
+    async Officer_Registration(sql, values) {
+        try {
+            
+        
+
+            this.query = sql;
+            this.Values = values;
+            this.connection = await mysql.createConnection(this.dbConfig);
+                // Insert the new user
+              
+            const [existingRows] = await this.connection.execute('SELECT * FROM Officer_Details WHERE email = ?', [values[0]]);
+            
+            if (existingRows.length > 0) {
+                console.log('Duplicate entry error: Email already exists.');
+                return false;
+                
+            }
+          
+            else{
+                const [result] = await this.connection.execute(this.query, this.Values);
+                
+                console.log('Inserted ID:', result.insertId);
+                return true;
+            }
+           
+
+
+        } catch (err) {
+            console.error('Error:', err);
+            console.log("SERVER ERROR!!!!!");
+           
+        } 
+        finally {
+            if (this.connection) {
+                try {
+                    // Close the connection
+                    this.connection.end();
+                } catch (err) {
+                    console.error('Error closing connection:', err);
+                    return false;
+                }
+            }
+        }
+    }
     
     async DeleteByEmail(table, email) {
 

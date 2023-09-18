@@ -1,9 +1,9 @@
-import { useState } from 'react'
 import './App.css'
 import Crop from './Components/Features/Chasabad/Crop/Crop'
 import Dashboard from './Components/Dashboard/Dashboard'
 import Chasabad from './Components/Features/Chasabad/Dashboard/Chasabad'
 import Disease from './Components/Features/Rogbalai/Crop/Disease'
+import Profile from './Components/Dashboard/UserProfile'
 
 import Login from './Components/Login/Login'
 import Register from './Components/Register/Register'
@@ -11,7 +11,12 @@ import ForgotPass from './Components/ForgotPass/ForgotPass'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Rogbalai from './Components/Features/Rogbalai/Dashboard/Rogbalai'
-
+import Officer_Register from './Components/Register/Officer_Register'
+import Officer_Login from './Components/Login/Officer_Login'
+import Officer_Forgot from './Components/ForgotPass/Officer_ForgotPass'
+import Officer_Dashboard from './Components/Officer_Dashboard/Dashboard'
+import Officer_Advice from './Components/Officer_Dashboard/Advice'
+import GetAdvice from './Components/Features/GetAdvice/GetAdvice'
 import {
   createBrowserRouter,
   RouterProvider
@@ -50,7 +55,36 @@ const router= createBrowserRouter([
   {
     path:'/disease',
     element: <div><Disease/></div>
+  },
+  {
+    path:'/profile',
+    element: <div><Profile/></div>
+  },
+  {
+    path:'/officer_register',
+    element: <div><Officer_Register/></div>
+  },
+  {
+    path:'/officer_login',
+    element: <div><Officer_Login/></div>
+  },
+  {
+    path:'/officer_forgot',
+    element: <div><Officer_Forgot/></div>
+  },
+  {
+    path:'/officer_dashboard',
+    element: <div><Officer_Dashboard/></div>
+  },
+  {
+    path:'/officer_advice',
+    element: <div><Officer_Advice/></div>
+  },
+  {
+    path:'/get_advice',
+    element: <div><GetAdvice/></div>
   }
+
 ])
 function App() {
 
