@@ -22,6 +22,8 @@ function mail(OTP,Email){
     text:OTP
 };
 
+
+
 transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
         console.error('Error sending email:', error);
@@ -31,6 +33,27 @@ transporter.sendMail(mailOptions, (error, info) => {
 });
 }
 
-module.exports = { mail };
+
+
+function LinkSendMail(Text,Email){
+
+    const mailOptions = {
+       from: 'adcommerce247@gmail.com', 
+       to: Email, 
+       subject: 'মিটিং এর জন্য লিঙ্ক',
+       text:Text
+   };
+   
+   
+   
+   transporter.sendMail(mailOptions, (error, info) => {
+       if (error) {
+           console.error('Error sending email:', error);
+       } else {
+           console.log('Email sent:', info.response);
+       }
+   });
+}
+module.exports = { mail,LinkSendMail };
 
 

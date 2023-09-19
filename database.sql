@@ -22,11 +22,11 @@ CREATE TABLE Officer_Details (
 );
 
 CREATE TABLE Appointment (
+    Date DATE ,
     officer_name VARCHAR(255) NOT NULL,
     officer_email VARCHAR(255) NOT NULL,
     username varchar(60),
     user_email varchar(60),
-    Date DATE PRIMARY KEY,
     slot_1 varchar(60),
     slot_2 varchar(60),
     slot_3 varchar(60),

@@ -3,44 +3,47 @@ import axios from 'axios';
 import './DataTable.css'; // Import a separate CSS file for your DataTable styles
 
 const DataTable = () => {
-  const [data, setData] = useState([]);
-  axios.post('http://localhost:3005/get_advice',
-        {
-            LoginEmail: login_email,
-            LoginPassword:login_password
-
-        }).then((response)=>{
-           
-            const notify_a=()=>{
-                toast('ব্যবহারকারী পাওয়া গিয়েছে!')
-                toast('স্বাগতম!')
-            }
-            const notify_b=()=>{
-                toast('ব্যবহারকারী খুঁজে পাওয়া যায়নি!')
-            }
-            console.log(response.data.message)
-            if(response.data.message=='User not found!' ){
-                notify_b();
-                navigateTo('/login')
-                // setLoginStatus('Credentials Don`t Exist!')
-            }
-            else{
-                store(login_email);//Data store
-                notify_a();
-                navigateTo('/dashboard')
-            }
-        });
-    
-  useEffect(() => {
-    axios.get('http://localhost:3005/officer_advice')
+  let email = localStorage.getItem('email');
+  
+  
+    const [data, setData] = useState([]);
+  
+  
+    const handleSubmit = () => {
+      if(email==null){
+      email='none'
+    }
+   
+      axios.post('http://localhost:3005/get_advice', {
+        LoginEmail: email,
+      })
+      .then((response) => {
+        console.log('Meet_link data sent successfully');
+      })
+      .catch((error) => {
+        console.error('Error sending Meet_link data:', error);
+      });
+  
+    };
+  
+   useEffect(() => {
+    if (email === undefined || email === null) {
+      email = 'none';
+    }
+  
+    axios.get('http://localhost:3005/get_advice', {
+      params: {
+        LoginEmail: email,
+      },
+    })
       .then((response) => {
         setData(response.data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  }, []);
-
+  }, [email]);
+  
   return (
     <div className='container'>
       <div className="table-container">
@@ -58,11 +61,12 @@ const DataTable = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
-              <tr key={item.id}>
-                <td>{item.columnName}</td>
+          {data.map((item, index) => (
+              <tr key={index}>
+                <td>{item.officer_name}</td>
                 <td>
-                  <img src={item.image} alt="User" />
+                <img src={`data:image/jpeg;base64, ${item.image}`} alt="User" />
+
                 </td>
                 <td>{item.bio}</td>
                 <td>

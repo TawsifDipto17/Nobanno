@@ -69,8 +69,8 @@ app.post('/officer_register', upload.fields([{ name: 'profilePicture', maxCount:
   console.log(sentEmail);
   console.log(sentPassword);
 
-  const SQL = "INSERT INTO Officer_Details (email, name, password, image, certificate_pdf) VALUES (?, ?, SHA(?), ?, ?)";
-  const Values = [sentEmail, sentUserName, sentPassword, profilePicture.buffer, certificate.buffer]; // Use the buffer to store file data
+  let SQL = "INSERT INTO Officer_Details (email, name, password, image, certificate_pdf) VALUES (?, ?, SHA(?), ?, ?)";
+  let Values = [sentEmail, sentUserName, sentPassword, profilePicture.buffer, certificate.buffer]; // Use the buffer to store file data
 
   const db_class = require('./db_class');
   const db = new db_class('test');
@@ -78,7 +78,35 @@ app.post('/officer_register', upload.fields([{ name: 'profilePicture', maxCount:
   db.Officer_Registration(SQL, Values)
     .then(success => {
       if (success) {
-        res.send({ message: 'User added!' });
+       
+
+
+        //insert in appointment
+        const currentDate = new Date();
+        const isoFormattedDate = currentDate.toISOString().split('T')[0]; // Converts to 'YYYY-MM-DD'
+    
+         SQL="INSERT INTO Appointment (Date, officer_email,officer_name) VALUES (?, ? , ?)"
+         Values = [isoFormattedDate,sentEmail, sentUserName]; 
+    
+    
+        db.Insert(SQL, Values)
+        .then(success => {
+            if (success) {
+                console.log("Successful insert in appointment table");
+                res.send({ message: 'User added!' });
+               
+            } else {
+               
+                console.log("Unsuccessful insert in appointment table");
+            }
+        })
+        .catch(error => {
+            console.error("Error during login:", error);
+        });
+
+
+
+
       } else {
         res.send({ message: 'Email Exists. User not added!!!' });
       }
@@ -87,6 +115,9 @@ app.post('/officer_register', upload.fields([{ name: 'profilePicture', maxCount:
       console.error("Error during registration:", error);
       res.status(500).send({ message: 'An error occurred during registration.' });
     });
+   
+
+
 });
 
 

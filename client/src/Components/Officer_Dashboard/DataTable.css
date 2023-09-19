@@ -69,6 +69,8 @@
 
 }
 .send{
+  position: relative;
+    margin-left: 120px;
     color: rgb(7, 0, 15);
     font-weight: 500;
     background-color: rgb(208, 245, 59);
