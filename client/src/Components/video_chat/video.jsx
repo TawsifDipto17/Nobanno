@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 
-const JMeet = () => {
+const video = () => {
   useEffect(() => {
     const initializeJitsiMeet = async () => {
       const script = document.createElement('script');
@@ -37,5 +37,4 @@ const JMeet = () => {
   );
 };
 
-export default JMeet;
-
+export default video;

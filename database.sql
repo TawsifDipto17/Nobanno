@@ -23,13 +23,22 @@ CREATE TABLE Officer_Details (
 
 CREATE TABLE Appointment (
     Date DATE ,
-    officer_name VARCHAR(255) NOT NULL,
+    officer_name VARCHAR(255) NOT NULL Primary Key,
     officer_email VARCHAR(255) NOT NULL,
-    username varchar(60),
-    user_email varchar(60),
+    username_1 varchar(60),
+    user_email1 varchar(60),
+    username_2 varchar(60),
+    user_email2 varchar(60),
+    username_3 varchar(60),
+    user_email3 varchar(60),
+    username_4 varchar(60),
+    user_email4 varchar(60),
     slot_1 varchar(60),
     slot_2 varchar(60),
     slot_3 varchar(60),
     slot_4 varchar(60),
-    FOREIGN KEY (user_email) REFERENCES User_Details(Email)
+    FOREIGN KEY (user_email1) REFERENCES User_Details(Email),
+    FOREIGN KEY (user_email2) REFERENCES User_Details(Email),
+    FOREIGN KEY (user_email3) REFERENCES User_Details(Email),
+    FOREIGN KEY (user_email4) REFERENCES User_Details(Email)
 );

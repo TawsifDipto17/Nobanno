@@ -4,7 +4,7 @@
   "description": "",
   "main": "auth.js",
   "scripts": {
-    "start": "concurrently \"node auth.js\" \"node disease.js\" \"node crop.js\" \"node data.js\"",
+    "start": "concurrently \"nodemon auth.js\" \"nodemon disease.js\" \"nodemon crop.js\" \"nodemon data.js\" \"nodemon refresh.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,6 +17,7 @@
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.6.0",
     "nodemailer": "^6.9.4",
+    "nodemon": "^3.0.1",
     "path": "^0.12.7"
   }
 }

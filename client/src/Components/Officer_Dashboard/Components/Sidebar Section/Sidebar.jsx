@@ -78,7 +78,7 @@ const Sidebar = () => {
         <ul className="menuLists grid">
           
           <li className="listItem">
-            <a href="#" className='menuLink flex'>
+            <a href="/officer_advice" className='menuLink flex'>
               <GrUserExpert className="icon"/>
               <span className="smallText">
                 পরামর্শ

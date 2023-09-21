@@ -17,6 +17,7 @@ import Officer_Forgot from './Components/ForgotPass/Officer_ForgotPass'
 import Officer_Dashboard from './Components/Officer_Dashboard/Dashboard'
 import Officer_Advice from './Components/Officer_Dashboard/Advice'
 import GetAdvice from './Components/Features/GetAdvice/GetAdvice'
+import Video_Meet from './Components/video_chat/video'
 import {
   createBrowserRouter,
   RouterProvider
@@ -83,6 +84,10 @@ const router= createBrowserRouter([
   {
     path:'/get_advice',
     element: <div><GetAdvice/></div>
+  },
+  {
+    path:'/video_chat',
+    element: <div><Video_Meet/></div>
   }
 
 ])

@@ -81,28 +81,28 @@ app.post('/officer_register', upload.fields([{ name: 'profilePicture', maxCount:
        
 
 
-        //insert in appointment
-        const currentDate = new Date();
-        const isoFormattedDate = currentDate.toISOString().split('T')[0]; // Converts to 'YYYY-MM-DD'
+        // //insert in appointment
+        // const currentDate = new Date();
+        // const isoFormattedDate = currentDate.toISOString().split('T')[0]; // Converts to 'YYYY-MM-DD'
     
-         SQL="INSERT INTO Appointment (Date, officer_email,officer_name) VALUES (?, ? , ?)"
-         Values = [isoFormattedDate,sentEmail, sentUserName]; 
+        //  SQL="INSERT INTO Appointment (Date, officer_email,officer_name) VALUES (?, ? , ?)"
+        //  Values = [isoFormattedDate,sentEmail, sentUserName]; 
     
     
-        db.Insert(SQL, Values)
-        .then(success => {
-            if (success) {
-                console.log("Successful insert in appointment table");
-                res.send({ message: 'User added!' });
+        // db.Insert(SQL, Values)
+        // .then(success => {
+        //     if (success) {
+        //         console.log("Successful insert in appointment table");
+        //         res.send({ message: 'User added!' });
                
-            } else {
+        //     } else {
                
-                console.log("Unsuccessful insert in appointment table");
-            }
-        })
-        .catch(error => {
-            console.error("Error during login:", error);
-        });
+        //         console.log("Unsuccessful insert in appointment table");
+        //     }
+        // })
+        // .catch(error => {
+        //     console.error("Error during login:", error);
+        // });
 
 
 
