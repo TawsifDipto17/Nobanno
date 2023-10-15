@@ -1,0 +1,130 @@
+
+.headerDiv{
+    text-align: center;
+
+}
+
+  .container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 37%;
+    max-width: 600px;
+    overflow: hidden; 
+    overflow-y: auto;
+    max-height: 100vh; 
+  }
+  
+
+
+  
+  .textDiv {
+    text-align: center;
+  }
+  
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .footerDiv {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    overflow: visible;
+  }
+  
+  /* Icons */
+  .icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #555;
+  }
+  
+  /* Buttons */
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* OTP button */
+  .btnOTP {
+    background-color: #2d07ed;
+    color: #fff;
+    border: none;
+    margin-left: 20px;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+}
+  
+  .btnOTP:hover {
+    background-color: #1f8c42;
+  }
+  
+  /* Form input fields */
+  .input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  /* Password strength bar */
+  .react-password-strength-bar {
+    margin-top: 10px;
+  }
+  
+  /* Preview image for profile picture */
+  .previewImage {
+    width:80px;
+    height: 80px;
+    margin-top: 10px;
+  }
+  
+
+
+.loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: green;
+    overflow: visible; 
+  }
+  
+  
+  .previewPdf {
+    margin-top: 10px;
+    color: #bd2323;
+    max-width: 100%;
+    width: 40%; 
+    height: 90%; 
+    overflow: auto;
+  }
+
+  
+  

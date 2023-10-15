@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+//default styling
+
+:root {
+
+    --primaryColor: hs1(94, 55%, 56%);
+    --hoverCOlor: hs1(93, 75%, 76%);
+    --paleGreen: hs1(96, 75%, 89%);
+    --whiteColor: hs1(0, 0%, 100%);
+    --blackColor: hs1(0, 0%, 18%);
+    --greyText: hs1(0, 0%, 75%);
+    --bgColor: hs1(113, 11%, 85%);
+    --inputColor: hs1(330, 12%, 97%);
+    --inputColor: hs1(154, 14%, 90%);
+
+    /*Font and Typography*/
+
+    --biggestFontSize: 2.5 rem;
+    --h1FontSize: 1.5 rem;
+    --h2FontSize: 1.25 rem;
+    --h3FontSize: 1 rem;
+    --normalFontSize: .938 rem;
+    --smallFontSize: .813 rem;
+    --smallestFontSize: .75 rem;
+}
+
+.flex {
+    display: grid;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    align-items: center;
+    gap: 1.5 rem;
+}
+
+html {
+    font-size: 90%;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.icon {
+    font-size: var(--h2FontSize);
+    cursor: pointer;
+}
+
+img,
+video {
+    height: auto;
+    width: 100%;
+}
+
+.message {
+    display: none;
+}
+
+.showMessage {
+    display: block;
+    color: var(--whiteColor);
+    padding: 10px;
+    background: rgb(255, 0, 0);
+    border-radius: 3px;
+    text-align: center;
+}
+
+.showMessage {
+    display: block;
+    color: var(--whiteColor);
+    background: rgb(255, 0, 0);
+    border-radius: 3px;
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: .8 rem 1 rem;
+    color: var(--greyText);
+
+}
+
+.btn .icon {
+    margin-left: .5rem;
+}
+
+.btn:hover {
+    color: var(--primaryColor);
+    background: var(--paleGreen);
+}
+
+.loginPage {
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    border-radius: 10 px;
+    overflow: hidden;
+    box-shadow: 0 7px 50px rgb(214, 223, 213);
+
+    .container {
+        height: 75vh;
+        width: 60%;
+        margin: auto;
+        justify-content: space-between;
+        border-radius: 10px;
+        background: hsl(0, 0%, 91%);
+
+
+        .videoDiv {
+            position: relative;
+            display: flex;
+            flex-basis: 50%;
+            width: 70%;
+            height: 100%;
+            padding: 0 1.5rem;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: auto;
+            border-radius: 10px;
+            overflow: hidden;
+
+            video,
+            .footerDiv {
+                position: absolute;
+            }
+
+            video {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+            }
+
+            .textDiv {
+                position: relative;
+
+                .title {
+                    color: var(--whiteColor);
+                    font-size: 35px;
+                    font-weight: 800;
+                }
+
+                p {
+                    color: var(--whiteColor);
+                    font-size: 1rem;
+                    font-weight: 400;
+                }
+            }
+
+            .footerDiv {
+                bottom: 10px;
+                padding: 0 1rem;
+                height: 60px;
+                background: rgba(255, 255, 255, 0.248);
+                left: 0;
+                right: 0;
+                justify-content: space-between;
+                backdrop-filter: blur(1px);
+                border-radius: 10px;
+
+                .text {
+                    color: var(--whiteColor);
+                }
+
+                .btn {
+                    background: var(--whiteColor);
+                    color: var(--primaryColor);
+                    padding: .8rem 1.5rem;
+                    border-radius: 10px;
+                    font-weight: 400;
+                    transition: .3s ease;
+
+                    &:hover {
+                        background: var(--hoverCOlor);
+                        color: var(--blackColor);
+
+                        .icon{
+                            color:var(--blackColor);
+                            transform:translateX(5px);
+                        }
+                    }
+
+                }
+                .forgotPassword{
+                    font-size: 11px;
+                    color:var(--blackColor);
+                    opacity: .7;
+                    text-align: center;
+
+                    a{
+                        text-decoration: underline;
+                        cursor: pointer;
+                        opacity: 1;
+                    }
+                }
+
+            }
+
+
+        }
+    }
+}
