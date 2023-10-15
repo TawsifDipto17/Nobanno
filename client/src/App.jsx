@@ -2,6 +2,8 @@ import './App.css'
 import Crop from './Components/Features/Chasabad/Crop/Crop'
 import Dashboard from './Components/Dashboard/Dashboard'
 import Chasabad from './Components/Features/Chasabad/Dashboard/Chasabad'
+import Chad_krishi from './Components/Features/Chad_krishi/Dashboard/Chad_krishi'
+import Chad from './Components/Features/Chad_krishi/Chad/Chad'
 import Disease from './Components/Features/Rogbalai/Crop/Disease'
 import Profile from './Components/Dashboard/UserProfile'
 import OfficerProfile from './Components/Officer_Dashboard/Components/OfficerProfile'
@@ -93,6 +95,14 @@ const router= createBrowserRouter([
   {
     path:'/video_chat',
     element: <div><Video_Meet/></div>
+  },
+  {
+    path:'/chad_krishi',
+    element: <div><Chad_krishi/></div>
+  },
+  {
+    path:'/chad',
+    element: <div><Chad/></div>
   }
 
 ])

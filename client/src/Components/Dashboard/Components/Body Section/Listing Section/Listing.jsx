@@ -13,7 +13,11 @@ import img2 from '../../../Asset/news1.jpg'
 import img3 from '../../../Asset/news2.jpg'
 import img4 from '../../../Asset/blog1.png'
 import img5 from '../../../Asset/blog2.png'
+import { useSelectedItem } from '../../../../../SelectedItemContext'
+
 const Listing = () => {
+  const { selectItem } = useSelectedItem();
+
   return (
     <div className="listingSection">
 
@@ -27,19 +31,19 @@ const Listing = () => {
       <div className="secContainer flex">
       
       <Link to={'/chasabad'}>
-        <div className="singleItem">
+        <div className="singleItem" onClick={() => selectItem('ধান')}>
         
           <AiFillHeart className='icon'/>
             <img src={paddy} alt="listPlant" />
-            <h3><a href="/chasabad">ধান </a></h3>
+            <h3>ধান</h3>
         </div>
         </Link>
 
         <Link to={'/chasabad'}>
-        <div className="singleItem">
+        <div className="singleItem" onClick={() => selectItem('আলু')}>
           <AiOutlineHeart className='icon'/>
             <img src={potato} alt="listPlant" />
-            <h3><a href="/chasabad">আলু</a></h3>
+            <h3>আলু</h3>
         </div>
         </Link>
 

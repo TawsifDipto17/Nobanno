@@ -62,7 +62,7 @@ const Listing = () => {
 
 
       <div className="crop-info">
-        <p className="crop-title">আলুর জাত নির্বাচন</p>
+        <p className="crop-title">জাত নির্বাচন</p>
         <br></br>
         <p
           className={`crop-text ${

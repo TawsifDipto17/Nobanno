@@ -60,7 +60,7 @@ const Sidebar = () => {
           </li>
 
           <li className="listItem">
-            <a href="#" className='menuLink flex'>
+            <a href="chad_krishi" className='menuLink flex'>
               <PiPottedPlant className="icon"/>
               <span className="smallText">
                 ছাদ কৃষি
