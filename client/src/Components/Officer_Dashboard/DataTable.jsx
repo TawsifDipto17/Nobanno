@@ -99,6 +99,11 @@ const DataTable = () => {
       .catch((error) => {
         toast('সার্ভার সমস্যা');
       });
+
+      setTimeout(() => {
+        window.location.reload()
+
+      }, 1000);
  
   };
 
@@ -121,6 +126,11 @@ const DataTable = () => {
       .catch((error) => {
         toast('সার্ভার সমস্যা');
       });
+
+      setTimeout(() => {
+        window.location.reload()
+
+      }, 1000);
  
   };
 
@@ -143,6 +153,11 @@ const DataTable = () => {
       .catch((error) => {
         toast('সার্ভার সমস্যা');
       });
+
+      setTimeout(() => {
+        window.location.reload()
+
+      }, 1000);
  
   };
 
@@ -163,7 +178,11 @@ const DataTable = () => {
       .catch((error) => {
         toast('সার্ভার সমস্যা');
       });
-    navigateTo('/officer_dashboard')
+    // navigateTo('/officer_dashboard')
+    setTimeout(() => {
+      window.location.reload()
+
+    }, 1000);
   };
   const reject2 = () => {
     console.log('here')
@@ -182,6 +201,11 @@ const DataTable = () => {
       .catch((error) => {
         toast('সার্ভার সমস্যা');
       });
+
+      setTimeout(() => {
+        window.location.reload()
+
+      }, 1000);
 
   };
   const reject3 = () => {
@@ -202,6 +226,11 @@ const DataTable = () => {
         toast('সার্ভার সমস্যা');
       });
 
+      setTimeout(() => {
+        window.location.reload()
+
+      }, 1000);
+
   };
   const reject4 = () => {
     console.log('here')
@@ -220,6 +249,11 @@ const DataTable = () => {
       .catch((error) => {
         toast('সার্ভার সমস্যা');
       });
+
+      setTimeout(() => {
+        window.location.reload()
+
+      }, 1000);
 
   };
   useEffect(() => {

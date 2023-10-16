@@ -256,7 +256,7 @@ class db_class {
 
     get dbConfig() {
         return {
-            port:'4306',
+            port:'3306',
             host: 'localhost',
             user: 'root',
             password: '',

@@ -25,7 +25,7 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom'
-
+import Yolo from '../detection/src/Yolo'
 const router= createBrowserRouter([
 
   {
@@ -103,6 +103,10 @@ const router= createBrowserRouter([
   {
     path:'/chad',
     element: <div><Chad/></div>
+  },
+  {
+    path:'/detection',
+    element: <div><Yolo/></div>
   }
 
 ])

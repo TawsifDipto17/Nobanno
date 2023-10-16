@@ -87,7 +87,7 @@ const Sidebar = () => {
           </li>
 
           <li className="listItem">
-            <a href="#" className='menuLink flex'>
+            <a href="/detection" className='menuLink flex'>
               <FcCameraIdentification className="icon"/>
               <span className="smallText">
               রোগ শনাক্তকরণ
