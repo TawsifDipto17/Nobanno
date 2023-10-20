@@ -17,8 +17,42 @@ import {RiVirusLine} from 'react-icons/ri'
 import {PiPottedPlant} from 'react-icons/pi'
 import {GrUserExpert} from 'react-icons/gr'
 import {FcCameraIdentification} from 'react-icons/fc'
+import {toast} from 'react-toastify'
 const Sidebar = () => {
+
+  const email = localStorage.getItem('email');
+  const logged =  localStorage.getItem('logged');
+  
+  const notLoggedIn = (event)=>{
+    event.preventDefault();
+  
+    if(email === "null"){
+      toast('পরামর্শ গ্রহণের পূর্বে লগইন করুন');
+    } else{
+      window.location.href = '/get_advice';
+    }
+
+  };
+  const notLoggedIn2 = (event)=>{
+    event.preventDefault();
+  
+    if(email === "null"){
+      window.location.href = '/landing';
+    } else{
+      if(logged === "user"){
+      window.location.href = '/dashboard';
+      }
+      else if(logged === "officer"){
+        window.location.href = '/officer_dashboard';
+      }
+    }
+
+  };
+
+
+
   return (
+
     
     <div className='sideBar grid'>
       <div className="logoDiv flex">
@@ -33,7 +67,7 @@ const Sidebar = () => {
         <ul className="menuLists grid">
 
           <li className="listItem">
-            <a href="/dashboard" className='menuLink flex'>
+            <a href="#" onClick={notLoggedIn2} className='menuLink flex'>
               <IoMdSpeedometer className="icon"/>
               <span className="smallText">
                 ড্যাশবোর্ড 
@@ -77,8 +111,8 @@ const Sidebar = () => {
         </h3>
         <ul className="menuLists grid">
           
-          <li className="listItem">
-            <a href="/get_advice" className='menuLink flex'>
+        <li className="listItem">
+            <a href="#" onClick={notLoggedIn} className='menuLink flex'>
               <GrUserExpert className="icon"/>
               <span className="smallText">
                 পরামর্শ

@@ -15,6 +15,8 @@ import WeatherWidget from '../../../weather'
 
 
 const Top = () => {
+  localStorage.setItem('logged', 'officer');
+  console.log(localStorage.getItem('logged'));
   const[openProfile, setOpenProfile] = useState(false);
   const [data, setData] = useState([]); //for retrieval
 
@@ -74,7 +76,7 @@ const Top = () => {
                 </li>
                 </Link>
 
-                <Link to={'/officer_login'}>
+                <Link to={'/landing'}>
                 <li className='dropdownItem'>
                   <CiLogout className='icon'/>
                   <a href="#">লগ আউট </a>

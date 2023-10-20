@@ -1,0 +1,20 @@
+.btn-container button {
+  font-weight: 400;
+  text-decoration: none;
+  color: rgb(37, 14, 126);
+  background-color: rgb(131, 199, 30);
+  border: 3px solid rgb(3, 41, 5);
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+.btn-container button:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}

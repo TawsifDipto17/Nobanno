@@ -1,4 +1,6 @@
 import './App.css'
+
+import Landing from './Components/Landing/Dashboard'
 import Crop from './Components/Features/Chasabad/Crop/Crop'
 import Dashboard from './Components/Dashboard/Dashboard'
 import Chasabad from './Components/Features/Chasabad/Dashboard/Chasabad'
@@ -21,13 +23,21 @@ import Officer_Dashboard from './Components/Officer_Dashboard/Dashboard'
 import Officer_Advice from './Components/Officer_Dashboard/Advice'
 import GetAdvice from './Components/Features/GetAdvice/GetAdvice'
 import Video_Meet from './Components/video_chat/video'
+
+import Admin from './Components/Admin/Dashboard'
+import AdminChasabad from './Components/Admin/admin_chasabad'
 import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom'
 import Yolo from '../detection/src/Yolo'
+import AdminRogbalai from './Components/Admin/admin_rogbalai'
+import AdminChadbagan from './Components/Admin/admin_chadbagan'
 const router= createBrowserRouter([
-
+  {
+    path:'/admin',
+    element: <div><Admin/></div>
+  },
   {
     path:'/forgot',
     element: <div><ForgotPass/></div>
@@ -39,6 +49,10 @@ const router= createBrowserRouter([
   {
     path:'/register',
     element: <div><Register/></div>
+  },
+  {
+    path:'/landing',
+    element: <div><Landing/></div>
   },
   {
     path:'/dashboard',
@@ -107,6 +121,18 @@ const router= createBrowserRouter([
   {
     path:'/detection',
     element: <div><Yolo/></div>
+  },
+  {
+    path:"/admin_chasabad",
+    element: <div><AdminChasabad/></div>
+  },
+  {
+    path:"/admin_chadbagan",
+    element: <div><AdminChadbagan/></div>
+  },
+  {
+    path:"/admin_rogbalai",
+    element: <div><AdminRogbalai/></div>
   }
 
 ])

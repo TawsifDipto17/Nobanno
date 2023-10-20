@@ -46,6 +46,7 @@ const Officer_Login = () => {
                 // setLoginStatus('Credentials Don`t Exist!')
             }
             else{
+                localStorage.setItem('logged', 'officer');
                 notify_a();
                 store(login_email)
                 navigateTo('/officer_dashboard')

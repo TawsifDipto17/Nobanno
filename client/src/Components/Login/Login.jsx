@@ -51,6 +51,7 @@ const Login = () => {
                 // setLoginStatus('Credentials Don`t Exist!')
             }
             else{
+                localStorage.setItem('logged', 'user');
                 store(login_email);//Data store
                 notify_a();
                 navigateTo('/dashboard')

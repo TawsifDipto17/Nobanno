@@ -17,7 +17,35 @@ import {RiVirusLine} from 'react-icons/ri'
 import {PiPottedPlant} from 'react-icons/pi'
 import {GrUserExpert} from 'react-icons/gr'
 import {FcCameraIdentification} from 'react-icons/fc'
+import {toast} from 'react-toastify'
 const Sidebar = () => {
+
+  
+  const email = localStorage.getItem('email');
+  
+  const notLoggedIn = (event)=>{
+    event.preventDefault();
+  
+    if(email === "null"){
+      toast('পরামর্শ গ্রহণের পূর্বে লগইন করুন');
+    } else{
+      window.location.href = '/officer_advice';
+    }
+
+  };
+  const notLoggedIn2 = (event)=>{
+    event.preventDefault();
+  
+    if(email === "null"){
+      window.location.href = '/landing';
+    } else{
+      window.location.href = '/officer_dashboard';
+    }
+
+  };
+
+
+
   return (
     
     <div className='sideBar grid'>
@@ -33,7 +61,7 @@ const Sidebar = () => {
         <ul className="menuLists grid">
 
           <li className="listItem">
-            <a href="/dashboard" className='menuLink flex'>
+            <a href="#" onClick={notLoggedIn2} className='menuLink flex'>
               <IoMdSpeedometer className="icon"/>
               <span className="smallText">
                 ড্যাশবোর্ড 
@@ -60,7 +88,7 @@ const Sidebar = () => {
           </li>
 
           <li className="listItem">
-            <a href="#" className='menuLink flex'>
+            <a href="chad_krishi" className='menuLink flex'>
               <PiPottedPlant className="icon"/>
               <span className="smallText">
                 ছাদ কৃষি
@@ -78,7 +106,7 @@ const Sidebar = () => {
         <ul className="menuLists grid">
           
           <li className="listItem">
-            <a href="/officer_advice" className='menuLink flex'>
+            <a href="#" onClick={notLoggedIn}  className='menuLink flex'>
               <GrUserExpert className="icon"/>
               <span className="smallText">
                 পরামর্শ
@@ -87,7 +115,7 @@ const Sidebar = () => {
           </li>
 
           <li className="listItem">
-            <a href="#" className='menuLink flex'>
+            <a href="/detection" className='menuLink flex'>
               <FcCameraIdentification className="icon"/>
               <span className="smallText">
               রোগ শনাক্তকরণ

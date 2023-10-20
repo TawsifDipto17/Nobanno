@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { Webcam } from "../utils/webcam";
+import './btn-handler.css';
 
 const ButtonHandler = ({ imageRef, cameraRef, videoRef }) => {
   const [streaming, setStreaming] = useState(null); // streaming state
