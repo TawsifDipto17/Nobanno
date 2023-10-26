@@ -47,3 +47,39 @@ app.post('/disease', (req, res) => {
     
 })
 
+
+
+
+
+app.post('/yolo', (req, res) => {
+
+  const sentYolo = req.body.yolo
+
+
+
+ console.log(sentYolo)
+
+  const Values = [sentYolo];
+  
+
+  const db_class = require('./db_class');
+  const db = new db_class('test');
+  
+  const SQL = "SELECT disease,symptom,cure FROM cropDisease where name='আলু' and disease=? GROUP BY disease,symptom,cure ";
+  
+  db.GetSelect(SQL,Values)
+    .then(result => {
+      if (result !== false) {
+        // Data retrieval was successful
+        console.log('Query Result:', result);
+        res.send(result)
+      } else {
+        // An error occurred
+        console.log('Error occurred during data retrieval.');
+      }
+    })
+    .catch(error => {
+      console.error('Error during query:', error);
+    });
+  
+})

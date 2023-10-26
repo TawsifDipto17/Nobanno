@@ -1,4 +1,33 @@
 import labels from "./labels.json";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
+let klass;
+
+
+
+const sendData = () => {
+
+
+  axios.post("http://localhost:3004/yolo", {
+    yolo:klass
+  })
+  .then(response => {
+    console.log(response.data[0]);
+    const cure_disease=document.getElementById("cure_disease")
+    const cure_symptom=document.getElementById("cure_symptom")
+    const cure_cure=document.getElementById("cure_cure")
+  
+    cure_disease.innerHTML=response.data[0].disease
+    cure_symptom.innerHTML=response.data[0].symptom
+    cure_cure.innerHTML=response.data[0].cure
+
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
+}
 
 /**
  * Render prediction boxes
@@ -33,7 +62,9 @@ export const renderBoxes = (
   for (let i = 0; i < scores_data.length; ++i) {
     // filter based on class threshold
     if (scores_data[i] > classThreshold) {
-      const klass = labels[classes_data[i]];
+       klass = labels[classes_data[i]];
+      console.log(klass)
+       sendData();
       const color = colors.get(classes_data[i]);
       const score = (scores_data[i] * 100).toFixed(1);
 
@@ -70,6 +101,7 @@ export const renderBoxes = (
       ctx.fillText(klass + " - " + score + "%", x1 - 1, yText < 0 ? 0 : yText);
     }
   }
+  
 };
 
 class Colors {
@@ -111,3 +143,4 @@ class Colors {
       : null;
   };
 }
+

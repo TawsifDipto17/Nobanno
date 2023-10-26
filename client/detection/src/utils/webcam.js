@@ -26,6 +26,16 @@ export class Webcam {
    * @param {HTMLVideoElement} videoRef video tag reference
    */
   close = (videoRef) => {
+
+
+    const cure_disease=document.getElementById("cure_disease")
+    const cure_symptom=document.getElementById("cure_symptom")
+    const cure_cure=document.getElementById("cure_cure")
+
+
+    cure_disease.innerHTML=" "
+    cure_symptom.innerHTML=" "
+    cure_cure.innerHTML=" "
     if (videoRef.srcObject) {
       videoRef.srcObject.getTracks().forEach((track) => {
         track.stop();
