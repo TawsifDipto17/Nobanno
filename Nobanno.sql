@@ -18,9 +18,9 @@ CREATE TABLE `cropProduction` (
   `irrigation` longtext DEFAULT NULL,
   `care` longtext DEFAULT NULL,
   `collect` longtext DEFAULT NULL,
-  `storage` longtext DEFAULT NULL,
   FOREIGN KEY (name) REFERENCES crop(name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
 
 
 CREATE TABLE `rooftopCropProduction` (
@@ -31,12 +31,9 @@ CREATE TABLE `rooftopCropProduction` (
   `selectSoil` longtext DEFAULT NULL,
   `growingSeason` longtext DEFAULT NULL,
   `seed` longtext DEFAULT NULL,
-  `climate` longtext DEFAULT NULL,
   `fertilizer` longtext DEFAULT NULL,
   `irrigation` longtext DEFAULT NULL,
   `care` longtext DEFAULT NULL,
-  `collect` longtext DEFAULT NULL,
-  `storage` longtext DEFAULT NULL,
   FOREIGN KEY (name) REFERENCES crop(name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 

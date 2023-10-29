@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import video from '../../../assets/grape.mp4';
 import Sidebar from './Components/Sidebar Section/Sidebar';
+import DiseaseForm from './diseaseForm';
 
 function AdminRogbalai() {
 
@@ -18,7 +19,8 @@ function AdminRogbalai() {
         <div className='mainContent'>
 
           <div className='bottom flex'>
-              This is for editing Rogbalai.
+              {/* This is for editing Rogbalai. */}
+              <DiseaseForm/>
           </div>
         </div>
       </div>

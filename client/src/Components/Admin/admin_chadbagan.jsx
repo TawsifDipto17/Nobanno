@@ -5,6 +5,9 @@ import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import video from '../../../assets/grape.mp4';
 import Sidebar from './Components/Sidebar Section/Sidebar';
+import ChasabadForm from './chadbaganForm';
+import ChadbaganForm from './chadbaganForm';
+
 
 function AdminChadbagan() {
 
@@ -18,7 +21,8 @@ function AdminChadbagan() {
         <div className='mainContent'>
 
           <div className='bottom flex'>
-              This is for editing Chadbagan.
+              {/* This is for editing Chadbagan. */}
+              <ChadbaganForm/>
           </div>
         </div>
       </div>
@@ -27,5 +31,6 @@ function AdminChadbagan() {
 
 
 }
+
 
 export default AdminChadbagan;
