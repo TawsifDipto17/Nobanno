@@ -28,10 +28,11 @@ const Sidebar = () => {
   
     if(email === "null"){
       toast('পরামর্শ গ্রহণের পূর্বে লগইন করুন');
-    } else{
+    } else if(logged === "user"){
       window.location.href = '/get_advice';
+    } else if(logged === "officer"){
+      window.location.href = '/officer_advice';
     }
-
   };
   const notLoggedIn2 = (event)=>{
     event.preventDefault();

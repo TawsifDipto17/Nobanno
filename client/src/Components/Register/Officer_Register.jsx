@@ -17,7 +17,7 @@ import logo from '../../../assets/logo.jpg';
 function store(email) {
   localStorage.setItem('email', email);
 
-}
+}''
 const Officer_Register = () => {
   const email_notify = () => toast('অকার্যকর ইমেইল ফর্ম্যাট!!!');
   const otp_invalid = () => toast('ভুল ওটিপি...আবার চেষ্টা করুন!!!');

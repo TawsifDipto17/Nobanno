@@ -4,18 +4,24 @@
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
   }
-  
+
+  #video-container-inner {
+    width: 100%;
+    height: 100%;
+    overflow: scroll; /* Make the inner container scrollable */
+  }
   
   #video-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 110%;
     object-fit: cover;
     z-index: -1; 
+    overflow: scroll;
   }
   
   

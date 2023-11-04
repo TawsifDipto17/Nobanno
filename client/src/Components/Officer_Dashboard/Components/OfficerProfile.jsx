@@ -90,10 +90,12 @@ function OfficerProfile() {
 
   return (
     <div className="video-container">
+      <div className="video-container-inner">
       <video autoPlay muted loop id="video-background">
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      </div>
       <button id='back' onClick={()=>{
         navigateTo('/officer_dashboard');
       }}>Back</button>

@@ -18,7 +18,8 @@ function store(email) {
     localStorage.setItem('email', email);
 
   }
-  
+
+ 
 
  
 const Login = () => {
@@ -53,6 +54,7 @@ const Login = () => {
             else{
                 localStorage.setItem('logged', 'user');
                 store(login_email);//Data store
+               
                 notify_a();
                 navigateTo('/dashboard')
             }

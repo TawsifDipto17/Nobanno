@@ -59,7 +59,7 @@
   height: 100%;
 }
 
-button {
+.App button {
   font-weight: 400;
   text-decoration: none;
   color: rgb(37, 14, 126);
@@ -75,7 +75,7 @@ button {
   -o-border-radius: 12px;
 }
 
-button:hover {
+.App button:hover {
   color: black;
   background-color: white;
   border: 2px solid black;
