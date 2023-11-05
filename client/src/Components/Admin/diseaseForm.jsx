@@ -24,7 +24,7 @@ const DiseaseForm = () => {
       .then((response) => {
         console.log("Success!");
         // Optionally, you can handle success behavior here, e.g., show a success message to the user
-        // window.location.reload(); // Reload the page after successful submission
+        window.location.reload(); // Reload the page after successful submission
       })
       .catch((error) => {
         console.error("Error occurred:", error);
