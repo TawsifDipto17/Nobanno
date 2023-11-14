@@ -14,6 +14,7 @@ function OfficerProfile() {
   const [username, setUsername] = useState('');
   const [profilePicture, setProfilePicture] = useState(null);
   const [contact, setContact] = useState('');
+  const [bio, setBio] = useState('');
   const [fileSizeError, setFileSizeError] = useState(false); // Added file size error state
 
     
@@ -73,6 +74,9 @@ function OfficerProfile() {
     }
     if(contact){
     formData.append('Contact', contact);
+    }
+    if (bio) {
+      formData.append('Bio', bio); 
     }
 
     Axios.post("http://localhost:3002/updateOfficerData", formData, {
@@ -140,6 +144,18 @@ function OfficerProfile() {
            
             />
           </label>
+          <label>
+              Bio:
+              <textarea
+                id="bio"
+                placeholder={item.bio}
+                onChange={(event) => {
+                  setBio(event.target.value);
+                }}
+              />
+            </label>
+            
+
           <div>
           <button type="submit" onClick={createUser} disabled={fileSizeError}>
               Save

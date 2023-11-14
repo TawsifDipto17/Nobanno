@@ -17,13 +17,14 @@ import { useSelectedItem } from '../../../../../SelectedItemContext'
 
 const Listing = () => {
   const { selectItem } = useSelectedItem();
+  const navigateTo = useNavigate();
 
   return (
     <div className="listingSection">
 
       <div className="heading flex">
         <h1>নির্বাচিত </h1>
-        <button className='btn flex'>
+        <button className='btn flex' onClick={() => navigateTo('/chasabad')} >
           আরো দেখুন <BsArrowRightShort className='icon'/>
         </button>
       </div>
@@ -67,7 +68,7 @@ const Listing = () => {
         <div className="topSellers">
           <div className="heading flex">
             <h3>সাম্প্রতিক খবর</h3>
-            <button className='btn flex'>
+            <button className='btn flex' onClick={() => navigateTo('/news')} >
             আরো দেখুন <BsArrowRightShort className='icon'/>
             </button>
           </div>
@@ -102,17 +103,13 @@ const Listing = () => {
         <div className="featuredSellers">
           <div className="heading flex">
             <h3>আজকের ব্লগ </h3>
-            <button className='btn flex'>
+            <button className='btn flex' onClick={() => navigateTo('/blog')} >
             আরো দেখুন <BsArrowRightShort className='icon'/>
             </button>
           </div>
 
           <div className="card flex">
             <div className="users">
-              
-              {/* <img src={img2} alt="seller" />
-              <img src={img2} alt="seller" />
-              <img src={img2} alt="seller" /> */}
               <img src={img4} alt="blog" />
             </div>
             <div className="cardText">
@@ -124,10 +121,6 @@ const Listing = () => {
           </div>
           <div className="card flex">
             <div className="users">
-              
-              {/* <img src={img2} alt="seller" />
-              <img src={img2} alt="seller" />
-              <img src={img2} alt="seller" /> */}
               <img src={img5} alt="blog" />
             </div>
             <div className="cardText">

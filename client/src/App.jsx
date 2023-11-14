@@ -9,6 +9,8 @@ import Chad from './Components/Features/Chad_krishi/Chad/Chad'
 import Disease from './Components/Features/Rogbalai/Crop/Disease'
 import Profile from './Components/Dashboard/UserProfile'
 import OfficerProfile from './Components/Officer_Dashboard/Components/OfficerProfile'
+import AgriculturalOfficerList from './Components/Features/GetAdvice/OfficerDatabase'
+
 
 import Login from './Components/Login/Login'
 import Register from './Components/Register/Register'
@@ -33,6 +35,10 @@ import {
 import Yolo from '../detection/src/Yolo'
 import AdminRogbalai from './Components/Admin/admin_rogbalai'
 import AdminChadbagan from './Components/Admin/admin_chadbagan'
+import AgriculturalBlog from './Components/Features/AgriBlog'
+import AgriculturalNews from './Components/Features/AgriNews'
+import About from './Components/Features/About'
+import Description from './Components/Features/Description'
 const router= createBrowserRouter([
   {
     path:'/admin',
@@ -57,6 +63,14 @@ const router= createBrowserRouter([
   {
     path:'/dashboard',
     element: <div><Dashboard/></div>
+  },
+  {
+    path:'/blog',
+    element: <div><AgriculturalBlog/></div>
+  },
+  {
+    path:'/news',
+    element: <div><AgriculturalNews/></div>
   },
   {
     path:'/chasabad',
@@ -103,6 +117,10 @@ const router= createBrowserRouter([
     element: <div><Officer_Advice/></div>
   },
   {
+    path:'officer_database',
+    element:<div><AgriculturalOfficerList/></div>
+  },
+  {
     path:'/get_advice',
     element: <div><GetAdvice/></div>
   },
@@ -133,6 +151,14 @@ const router= createBrowserRouter([
   {
     path:"/admin_rogbalai",
     element: <div><AdminRogbalai/></div>
+  },
+  {
+    path:"/about",
+    element: <div><About/></div>
+  },
+  {
+    path:"/description",
+    element: <div><Description/></div>
   }
 
 ])

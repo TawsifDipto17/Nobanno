@@ -16,6 +16,7 @@ import WeatherWidget from '../../../weather'
  
 
 const Top = () => {
+  const navigateTo = useNavigate();
   localStorage.setItem('logged', 'user');
   console.log(localStorage.getItem('logged'));
   const[openProfile, setOpenProfile] = useState(false);
@@ -102,8 +103,8 @@ const Top = () => {
           <h1>সোনার বাংলা আসুক প্রযুক্তির হাত ধরে</h1>
           <p>সকল কৃষি জিজ্ঞাসার সমাধান, কৃষকের হাতের মুঠোয় </p>
           <div className="buttons flex">
-            <button className='btn'>বিস্তারিত জানুন</button>
-            <button className='btn transparent'>আমাদের গল্প</button>
+            <button className='btn' onClick={() => navigateTo('/description')} >বিস্তারিত জানুন</button>
+            <button className='btn transparent' onClick={() => navigateTo('/about')} >আমাদের গল্প</button>
           </div>
 
           <div className="videoDiv">

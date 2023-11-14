@@ -45,7 +45,7 @@ const ChasabadForm = () => {
 
   return (
     <div className='mainDiv' >
-      <h1>Crop Production Form</h1>
+      <h1>চাষাবাদ ফর্ম </h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Crop Name:</label>

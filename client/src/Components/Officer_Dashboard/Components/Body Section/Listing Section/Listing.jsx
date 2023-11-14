@@ -12,13 +12,16 @@ import img2 from '../../../Asset/news1.jpg'
 import img3 from '../../../Asset/news2.jpg'
 import img4 from '../../../Asset/blog1.png'
 import img5 from '../../../Asset/blog2.png'
+import { useNavigate } from 'react-router-dom'
 const Listing = () => {
+  const navigateTo = useNavigate();
   return (
+   
     <div className="listingSection">
 
       <div className="heading flex">
         <h1>নির্বাচিত </h1>
-        <button className='btn flex'>
+        <button className='btn flex' onClick={() => navigateTo('/chasabad')} >
           আরো দেখুন <BsArrowRightShort className='icon'/>
         </button>
       </div>
@@ -55,7 +58,7 @@ const Listing = () => {
         <div className="topSellers">
           <div className="heading flex">
             <h3>সাম্প্রতিক খবর</h3>
-            <button className='btn flex'>
+            <button className='btn flex' onClick={() => navigateTo('/news')}>
             আরো দেখুন <BsArrowRightShort className='icon'/>
             </button>
           </div>
@@ -90,7 +93,7 @@ const Listing = () => {
         <div className="featuredSellers">
           <div className="heading flex">
             <h3>আজকের ব্লগ </h3>
-            <button className='btn flex'>
+            <button className='btn flex'  onClick={() => navigateTo('/blog')}>
             আরো দেখুন <BsArrowRightShort className='icon'/>
             </button>
           </div>

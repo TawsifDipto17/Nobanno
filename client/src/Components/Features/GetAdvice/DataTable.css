@@ -33,7 +33,10 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
-
+.datatable-container{
+  width: 1100px;
+  margin-left: 30px;
+}
 .table-container {
     display: flex;
     flex: 1; /* Expand to fill available space */

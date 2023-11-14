@@ -407,7 +407,7 @@ app.get('/officerData', (req, res) => {
   const db_class = require('./db_class');
   const db = new db_class('test');
   
-  const SQL = 'SELECT name, email, contact, TO_BASE64(image) AS image_base64 FROM officer_details where email=? ';
+  const SQL = 'SELECT name, email, contact,bio, TO_BASE64(image) AS image_base64 FROM officer_details where email=? ';
   console.log(SQL)
   db.GetSelect(SQL,Values)
     .then(result => {
@@ -419,7 +419,49 @@ app.get('/officerData', (req, res) => {
             username: row.name,
             email: row.email,
             image: row.image_base64,
-            contact: row.contact
+            contact: row.contact,
+            bio:row.bio
+          };
+        });
+
+        console.log('Query Result:', getData);
+        res.json(getData);
+      } else {
+        // An error occurred
+        console.log('Error occurred during data retrieval.');
+      }
+    })
+    .catch(error => {
+      console.error('Error during query:', error);
+    });
+  
+})
+
+  
+app.get('/allofficerData', (req, res) => {
+
+  const email = req.query.LoginEmail;
+  console.log(email);
+
+  const Values = [email];
+
+  const db_class = require('./db_class');
+  const db = new db_class('test');
+  
+  const SQL = 'SELECT name, email, bio, contact, TO_BASE64(image) AS image_base64 FROM officer_details';
+  console.log(SQL)
+  db.GetSelect(SQL,Values)
+    .then(result => {
+      if (result !== false) {
+        // Data retrieval was successful
+
+        const getData = result.map((row) => {
+          return {
+            username: row.name,
+            email: row.email,
+            image: row.image_base64,
+            contact: row.contact,
+            bio: row.bio
           };
         });
 
@@ -440,6 +482,7 @@ app.post('/updateOfficerData',upload.fields([{ name: 'profilePicture', maxCount:
   const sentEmail = req.body.Email;
   const sentUserName = req.body.UserName;
   const sentContact = req.body.Contact;
+  const sentBio = req.body.Bio;
 
   const profilePicture = req.files['profilePicture'] ? req.files['profilePicture'][0] : null;
 
@@ -456,6 +499,11 @@ app.post('/updateOfficerData',upload.fields([{ name: 'profilePicture', maxCount:
   if (sentContact) {
     SQL += " contact = ?,";
     Values.push(sentContact);
+  }
+
+  if (sentBio) {
+    SQL += " bio = ?,";
+    Values.push(sentBio);
   }
 
   if (profilePicture) {
@@ -492,7 +540,149 @@ app.post('/updateOfficerData',upload.fields([{ name: 'profilePicture', maxCount:
       res.status(500).send('Error during update');
     });
 });
+
+
+ 
+app.get('/blogData', (req, res) => {
+
+  const Values = [];
+
+  const db_class = require('./db_class');
+  const db = new db_class('test');
   
+  const SQL = 'SELECT title,link, TO_BASE64(image) AS image_base64 FROM blogpost';
+  console.log(SQL)
+  db.GetSelect(SQL,Values)
+    .then(result => {
+      if (result !== false) {
+        // Data retrieval was successful
+
+        const getData = result.map((row) => {
+          return {
+            title: row.title,
+            link: row.link,
+            image: row.image_base64
+          };
+        });
+
+        // console.log('Query Result:', getData);
+        res.json(getData);
+      } else {
+        // An error occurred
+        console.log('Error occurred during data retrieval.');
+      }
+    })
+    .catch(error => {
+      console.error('Error during query:', error);
+    });
+  
+})
+
+
+app.post('/addBlog',upload.fields([{ name: 'image', maxCount: 1 } ]), (req, res) => {
+  const sentTitle = req.body.title;
+  const sentLink = req.body.link;
+
+  const sentImage = req.files['image'] ? req.files['image'][0] : null;
+
+  const SQL = "INSERT INTO blogpost (title, link, image) VALUES (?, ?, ?)";
+  const Values = [sentTitle, sentLink, sentImage.buffer];
+
+ 
+
+  const db_class = require('./db_class');
+  const db = new db_class('test');
+
+  db.Update(SQL, Values)
+    .then(result => {
+      if (result !== false) {
+       
+        console.log('Insertion Result:', result);
+        res.send(result);
+        
+      } else {
+        // An error occurred
+        console.log('Error occurred during data insertion.');
+        res.status(500).send('Error occurred during data insertion');
+      }
+    })
+    .catch(error => {
+      console.error('Error during blog insertion:', error);
+      res.status(500).send('Error during blog insertion');
+    });
+});
+
+ 
+app.get('/newsData', (req, res) => {
+
+  const Values = [];
+
+  const db_class = require('./db_class');
+  const db = new db_class('test');
+  
+  const SQL = 'SELECT title,link, TO_BASE64(image) AS image_base64 FROM news';
+  console.log(SQL)
+  db.GetSelect(SQL,Values)
+    .then(result => {
+      if (result !== false) {
+        // Data retrieval was successful
+
+        const getData = result.map((row) => {
+          return {
+            title: row.title,
+            link: row.link,
+            image: row.image_base64
+          };
+        });
+
+        // console.log('Query Result:', getData);
+        res.json(getData);
+      } else {
+        // An error occurred
+        console.log('Error occurred during data retrieval.');
+      }
+    })
+    .catch(error => {
+      console.error('Error during query:', error);
+    });
+  
+})
+
+
+
+app.post('/addNews',upload.fields([{ name: 'image', maxCount: 1 } ]), (req, res) => {
+  const sentTitle = req.body.title;
+  const sentLink = req.body.link;
+
+  const sentImage = req.files['image'] ? req.files['image'][0] : null;
+
+  const SQL = "INSERT INTO news (title, link, image) VALUES (?, ?, ?)";
+  const Values = [sentTitle, sentLink, sentImage.buffer];
+
+ 
+
+  const db_class = require('./db_class');
+  const db = new db_class('test');
+
+  db.Update(SQL, Values)
+    .then(result => {
+      if (result !== false) {
+       
+        console.log('Insertion Result:', result);
+        res.send(result);
+        
+      } else {
+        // An error occurred
+        console.log('Error occurred during data insertion.');
+        res.status(500).send('Error occurred during data insertion');
+      }
+    })
+    .catch(error => {
+      console.error('Error during news insertion:', error);
+      res.status(500).send('Error during news insertion');
+    });
+});
+
   
 
 

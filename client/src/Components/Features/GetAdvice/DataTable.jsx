@@ -206,7 +206,8 @@ const DataTable = () => {
 
 
   return (
-    <div className='container'>
+   
+    <div className='datatable-container'>
       <div className="table-container">
         <table className="data-table">
           <thead>

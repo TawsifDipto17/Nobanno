@@ -5,6 +5,13 @@
   overflow: auto;
   background: hsl(220,10%,94%);
 }
+.mainContent .top {
+  margin-top: 2rem;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+
 .mainContent .bottom {
   margin-top: 2rem;
   gap: 2rem;
@@ -15,4 +22,4 @@
   .bottom {
     flex-direction: column;
   }
-}/*# sourceMappingURL=body.css.map */
+}

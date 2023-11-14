@@ -22,6 +22,8 @@ const Sidebar = () => {
 
   const email = localStorage.getItem('email');
   const logged =  localStorage.getItem('logged');
+  const support = 'tawsiftashwar@iut-dhaka.edu';
+  
   
   const notLoggedIn = (event)=>{
     event.preventDefault();
@@ -159,7 +161,7 @@ const Sidebar = () => {
           <h3>হেল্প সেন্টার</h3>
           <p>অভিযোগ ও মতামত জানান 
           </p>
-          <button className='btn'>যোগাযোগ করুন</button>
+          <button className='btn' onClick={() => { window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${support}&su=${"Requesting Support from Nobanno Team"}`;}}  >যোগাযোগ করুন</button>
         </div>
       </div>
     </div>

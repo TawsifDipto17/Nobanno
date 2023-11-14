@@ -1,6 +1,7 @@
 import Sidebar from '../../Dashboard/Components/Sidebar Section/Sidebar';
 import DataTable from './DataTable'; // Import the DataTable component
 
+
 const GetAdvice = () => {
   return (
     <div className='dashboard flex'>

@@ -36,7 +36,7 @@ const DiseaseForm = () => {
 
   return (
     <div className='mainDiv' >
-      <h1>Crop Disease Form</h1>
+      <h1>রোগবালাই ফর্ম </h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Crop Name:</label>

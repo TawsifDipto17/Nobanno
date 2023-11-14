@@ -4,6 +4,19 @@ CREATE TABLE `crop` (
   PRIMARY KEY (name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 
+CREATE TABLE BlogPost(
+    title varchar(255) NOT NULL PRIMARY KEY,
+    image longblob,
+    link varchar(2000) NOT NULL 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
+CREATE TABLE News(
+    title varchar(255) NOT NULL PRIMARY KEY,
+    image longblob,
+    link varchar(2000) NOT NULL 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
+
 
 CREATE TABLE `cropProduction` (
   `name` varchar(100) NOT NULL,

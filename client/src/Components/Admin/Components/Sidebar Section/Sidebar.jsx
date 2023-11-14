@@ -20,6 +20,7 @@ import {FcCameraIdentification} from 'react-icons/fc'
 import {toast} from 'react-toastify'
 const Sidebar = () => {
 
+  const support = 'tawsiftashwar@iut-dhaka.edu';
   // const email = localStorage.getItem('email');
   // const logged =  localStorage.getItem('logged');
   
@@ -62,7 +63,7 @@ const Sidebar = () => {
 
       <div className="menuDiv">
         <h3 className="divTitle">
-          Update Contents
+         সম্পাদনা করুন 
         </h3>
         <ul className="menuLists grid">
 
@@ -165,7 +166,7 @@ const Sidebar = () => {
           <h3>হেল্প সেন্টার</h3>
           <p>অভিযোগ ও মতামত জানান 
           </p>
-          <button className='btn'>যোগাযোগ করুন</button>
+          <button className='btn' onClick={() => { window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${support}&su=${"Requesting Support from Nobanno Team"}`;}}  >যোগাযোগ করুন</button>
         </div>
       </div>
     </div>

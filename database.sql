@@ -42,3 +42,4 @@ CREATE TABLE Appointment (
     FOREIGN KEY (user_email3) REFERENCES User_Details(Email),
     FOREIGN KEY (user_email4) REFERENCES User_Details(Email)
 );
+

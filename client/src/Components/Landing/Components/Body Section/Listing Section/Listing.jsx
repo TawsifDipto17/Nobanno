@@ -16,6 +16,7 @@ import img5 from '../../../Asset/blog2.png'
 import { useSelectedItem } from '../../../../../SelectedItemContext'
 
 const Listing = () => {
+  const navigateTo = useNavigate();
   const { selectItem } = useSelectedItem();
 
   return (
@@ -23,7 +24,7 @@ const Listing = () => {
 
       <div className="heading flex">
         <h1>নির্বাচিত </h1>
-        <button className='btn flex'>
+        <button className='btn flex' onClick={() => navigateTo('/chasabad')} >
           আরো দেখুন <BsArrowRightShort className='icon'/>
         </button>
       </div>
@@ -67,7 +68,7 @@ const Listing = () => {
         <div className="topSellers">
           <div className="heading flex">
             <h3>সাম্প্রতিক খবর</h3>
-            <button className='btn flex'>
+            <button className='btn flex' onClick={() => navigateTo('/news')} >
             আরো দেখুন <BsArrowRightShort className='icon'/>
             </button>
           </div>
@@ -102,7 +103,7 @@ const Listing = () => {
         <div className="featuredSellers">
           <div className="heading flex">
             <h3>আজকের ব্লগ </h3>
-            <button className='btn flex'>
+            <button className='btn flex' onClick={() => navigateTo('/news')} >
             আরো দেখুন <BsArrowRightShort className='icon'/>
             </button>
           </div>

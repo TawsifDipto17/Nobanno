@@ -18,18 +18,18 @@ const Top = () => {
         <h1>ছাদকৃষি </h1>
           <p>ছাদকৃষি সেকশনে আপনাকে স্বাগতম </p>
         </div>
-        <div className="searchBar flex">
+        {/* <div className="searchBar flex">
           <input type='text' placeholder='ড্যাশবোর্ডে খুঁজুন' />
           <BiSearchAlt className="icon" />
-        </div>
+        </div> */}
 
-        <div className="adminDiv flex">
+        {/* <div className="adminDiv flex">
           <TbMessageCircle className="icon" />
           <MdOutlineNotificationsNone className="icon" />
           <div className="adminImage">
             <img src={img} alt='Admin Image' />
           </div>
-        </div>
+        </div> */}
 
       </div>
 

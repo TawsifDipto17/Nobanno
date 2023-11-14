@@ -16,6 +16,7 @@ import WeatherWidget from '../../../weather'
  
 
 const Top = () => {
+  const navigateTo = useNavigate();
   const[openProfile, setOpenProfile] = useState(false);
   localStorage.setItem('email', null);
   // const [data, setData] = useState([]); //for retrieval
@@ -46,14 +47,14 @@ const Top = () => {
           <h1> নবান্ন ওয়েবসাইটে স্বাগতম </h1>
           <p>আবারো আসার জন্য ধন্যবাদ! </p>
         </div>
-        <div className="searchBar flex">
+        {/* <div className="searchBar flex">
           <input type='text' placeholder='ড্যাশবোর্ডে খুঁজুন' />
           <BiSearchAlt className="icon" />
-        </div>
+        </div> */}
 
         <div className="adminDiv flex">
-          <TbMessageCircle className="icon" />
-          <MdOutlineNotificationsNone className="icon" />
+          {/* <TbMessageCircle className="icon" /> */}
+          {/* <MdOutlineNotificationsNone className="icon" /> */}
           <div className="adminImage" onClick={()=> setOpenProfile((prev)=>!prev)}>
             <img src={img} alt='Admin Image' /> 
           </div>
@@ -97,8 +98,8 @@ const Top = () => {
           <h1>সোনার বাংলা আসুক প্রযুক্তির হাত ধরে</h1>
           <p>সকল কৃষি জিজ্ঞাসার সমাধান, কৃষকের হাতের মুঠোয় </p>
           <div className="buttons flex">
-            <button className='btn'>বিস্তারিত জানুন</button>
-            <button className='btn transparent'>আমাদের গল্প</button>
+            <button className='btn' onClick={() => navigateTo('/description')} >বিস্তারিত জানুন</button>
+            <button className='btn transparent' onClick={() => navigateTo('/about')} >আমাদের গল্প</button>
           </div>
 
           <div className="videoDiv">
