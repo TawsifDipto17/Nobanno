@@ -10,6 +10,38 @@ const DiseaseForm = () => {
     cure: ''
   });
 
+  const cropNames = [
+    "ধান",
+    "গম",
+    "পাট",
+    "আলু",
+    "মুগ",
+    "কাঁঠাল",
+    "আম",
+    "কলা",
+    "সরিষা",
+    "তিল",
+    "শিম",
+    "টমেটো",
+    "পেঁপে",
+    "বাঁধাকপি",
+    "মিষ্টি আলু",
+    "গোলাপ",
+    "বেগুন",
+    "পটল",
+    "লাউ",
+    "সিম",
+    "লেবু",
+    "পেয়ারা",
+    "কমলা",
+    "মুলা",
+    "পটল",
+    "লাউ",
+    "লাল শাক",
+  
+// Add more crop names as needed
+];
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -40,7 +72,15 @@ const DiseaseForm = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Crop Name:</label>
-          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+          {/* Dropdown selection for Crop Name */}
+          <select id="name" name="name" value={formData.name} onChange={handleChange} required>
+              <option value="" disabled>Select a crop</option>
+              {cropNames.map((crop, index) => (
+                <option key={index} value={crop}>
+                  {crop}
+                </option>
+              ))}
+            </select>
         </div>
         <br />
         <div>

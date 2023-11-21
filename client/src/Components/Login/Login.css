@@ -58,6 +58,20 @@ li {
   cursor: pointer;
 }
 
+#chasabad_img{
+  max-height: 10%;
+  max-width:60% ;
+  width: 60%;
+  height: auto;
+}
+
+#chad_img{
+  
+  max-height: 10%;
+  max-width:60% ;
+  width: 60%;
+  height: auto;
+}
 /* Images and Videos */
 img{
   width:50px;

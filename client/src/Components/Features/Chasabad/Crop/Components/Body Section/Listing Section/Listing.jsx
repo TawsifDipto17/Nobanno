@@ -11,9 +11,10 @@ const Listing = () => {
   const [details, setDetails] = useState({});
   const [expandedSections, setExpandedSections] = useState({});
 
+  const selected = localStorage.getItem('crop');
   useEffect(() => {
     Axios.post('http://localhost:3003/crop', {
-      CropName: selectedItem,
+      CropName: selected,
       
     })
       .then((response) => {

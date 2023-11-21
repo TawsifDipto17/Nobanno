@@ -4,6 +4,7 @@ import './OfficerProfile.css';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import video from '../../../../assets/grape.mp4';
+import { FaArrowLeft } from "react-icons/fa";
 
 function OfficerProfile() {
   const navigateTo = useNavigate();
@@ -102,7 +103,7 @@ function OfficerProfile() {
       </div>
       <button id='back' onClick={()=>{
         navigateTo('/officer_dashboard');
-      }}>Back</button>
+      }}><FaArrowLeft/></button>
       <form action=''>
         {data.map((item,index) => (
       <div className="user-profile" key={index}>
@@ -119,10 +120,10 @@ function OfficerProfile() {
           
         />
         <h1>{item.username}</h1>
-        <p>Email: {email}</p>
+        <p>ইমেইল: {email}</p>
         
           <label>
-            Username:
+          ব্যবহারকারীর নাম:
             <input
               type="text"
               id="username"
@@ -133,7 +134,7 @@ function OfficerProfile() {
             />
           </label>
           <label>
-            Contact:
+          যোগাযোগ:
             <input
               type="text"
               id="contact"
@@ -145,7 +146,7 @@ function OfficerProfile() {
             />
           </label>
           <label>
-              Bio:
+          বিস্তারিত:
               <textarea
                 id="bio"
                 placeholder={item.bio}
@@ -158,7 +159,7 @@ function OfficerProfile() {
 
           <div>
           <button type="submit" onClick={createUser} disabled={fileSizeError}>
-              Save
+          সংরক্ষণ
           </button>
           </div>
         

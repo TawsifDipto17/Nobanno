@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import video from '../../../assets/grape.mp4';
 import './AgriBlog.css';
 
+import { FaArrowLeft } from "react-icons/fa";
 
 const AgriculturalBlog = () => {
 
@@ -54,10 +55,10 @@ const AgriculturalBlog = () => {
       <source src={video} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <button id='back' onClick={goBack}>Back</button>
+    <button id='back' onClick={goBack}><FaArrowLeft/></button>
 
     <div>
-      <h2>Agricultural Blog</h2>
+      <h2>কৃষি ব্লগ</h2>
       <br />
       <div className="blog-container">
         {data.map((post, index) => (

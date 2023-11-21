@@ -10,7 +10,7 @@ import { Link , useNavigate} from 'react-router-dom'
 
 import img from '../../../Asset/admin.svg'
 import img2 from '../../../Asset/tree.png'
-import video from '../../../Asset/sunsetvideo.mp4'
+import video from '../../../../Admin/Asset/sunsetvideo.mp4'
 import WeatherWidget from '../../../weather'
 
 

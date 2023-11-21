@@ -683,6 +683,110 @@ app.post('/addNews',upload.fields([{ name: 'image', maxCount: 1 } ]), (req, res)
     });
 });
 
+
+
+app.get('/cropData', (req, res) => {
+
+  const Values = [];
+
+  const db_class = require('./db_class');
+  const db = new db_class('test');
+  
+  const SQL = 'SELECT name, TO_BASE64(image) AS image_base64 FROM crop';
+  console.log(SQL)
+  db.GetSelect(SQL,Values)
+    .then(result => {
+      if (result !== false) {
+        // Data retrieval was successful
+
+        const getData = result.map((row) => {
+          return {
+            name: row.name,
+            image: row.image_base64
+          };
+        });
+
+        // console.log('Query Result:', getData);
+        res.json(getData);
+      } else {
+        // An error occurred
+        console.log('Error occurred during data retrieval.');
+      }
+    })
+    .catch(error => {
+      console.error('Error during query:', error);
+    });
+  
+})
+
+
+
+app.post('/addCrop',upload.fields([{ name: 'image', maxCount: 1 } ]), (req, res) => {
+  const sentTitle = req.body.title;
+
+  const sentImage = req.files['image'] ? req.files['image'][0] : null;
+
+  const SQL = "INSERT INTO Crop (name, image) VALUES (?, ?)";
+  const Values = [sentTitle, sentImage.buffer];
+
+ 
+
+  const db_class = require('./db_class');
+  const db = new db_class('test');
+
+  db.Update(SQL, Values)
+    .then(result => {
+      if (result !== false) {
+       
+        console.log('Insertion Result:', result);
+        res.send(result);
+        
+      } else {
+        // An error occurred
+        console.log('Error occurred during data insertion.');
+        res.status(500).send('Error occurred during data insertion');
+      }
+    })
+    .catch(error => {
+      console.error('Error during crop insertion:', error);
+      res.status(500).send('Error during crop insertion');
+    });
+});
+
+
+app.get('/roofcropData', (req, res) => {
+
+  const Values = [];
+
+  const db_class = require('./db_class');
+  const db = new db_class('test');
+  
+  const SQL = 'SELECT name, TO_BASE64(image) AS image_base64 FROM rooftopcropproduction';
+  console.log(SQL)
+  db.GetSelect(SQL,Values)
+    .then(result => {
+      if (result !== false) {
+        // Data retrieval was successful
+
+        const getData = result.map((row) => {
+          return {
+            name: row.name,
+            image: row.image_base64
+          };
+        });
+
+        // console.log('Query Result:', getData);
+        res.json(getData);
+      } else {
+        // An error occurred
+        console.log('Error occurred during data retrieval.');
+      }
+    })
+    .catch(error => {
+      console.error('Error during query:', error);
+    });
+  
+})
   
 
 

@@ -8,9 +8,12 @@ import { BsArrowRightShort, BsQuestionCircle } from 'react-icons/bs'
 import img from '../../../Asset/admin.svg'
 import img2 from '../../../Asset/tree.png'
 import video from '../../../Asset/tomato.mp4'
+import { useNavigate } from 'react-router-dom'
 
 
 const Top = () => {
+
+  const navigateTo = useNavigate();
   return (
     <div className="topSection">
       <div className="headerSection flex">
@@ -39,8 +42,8 @@ const Top = () => {
           <br></br>
           <p>সকল কৃষি জিজ্ঞাসার সমাধান, কৃষকের হাতের মুঠোয় </p>
           <div className="buttons flex">
-            <button className='btn'>বিস্তারিত জানুন</button>
-            <button className='btn transparent'>আমাদের গল্প</button>
+          <button className='btn' onClick={() => navigateTo('/description')} >বিস্তারিত জানুন</button>
+            <button className='btn transparent' onClick={() => navigateTo('/about')} >আমাদের গল্প</button>
 
             
           </div>

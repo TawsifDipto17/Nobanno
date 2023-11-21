@@ -52,8 +52,26 @@
   }
 
   .description-container {
-    color: #fff;
+    color: bisque;
     margin-top: 20px;
     text-align: center;
+    text-shadow: 2px 2px 2px black;
   }
+  .desc_para {
+    margin: 30px;
+    text-align: justify;
+    /* font-size: 18px; */
+    line-height: 2;
+    margin-top: 20px;
+  }
+
+  .desc_para p{
+    font-size: 22px;
+  }
+  .desc_para span{
+      font-size: 18px;
+  }
+  
+  
+  
   

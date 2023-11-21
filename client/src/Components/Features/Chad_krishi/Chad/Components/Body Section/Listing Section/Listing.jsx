@@ -10,11 +10,30 @@ const Listing = () => {
   const { selectedItem } = useSelectedItem();
   const [details, setDetails] = useState({});
   const [expandedSections, setExpandedSections] = useState({});
+  const selected = localStorage.getItem('crop');
+  // useEffect(() => {
+  //   Axios.post('http://localhost:3003/chad', {
+  //     CropName: selected,
+      
+  //   })
+  //     .then((response) => {
+  //       if (Array.isArray(response.data) && response.data.length > 0) {
+  //         const cropData = response.data[0];
+  //         console.log(cropData);
+  //         setDetails(cropData); // Set the data in the state
+  //       } else {
+          
+  //         console.error('Data structure does not include introduction.');
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching data:', error);
+  //     });
+  // }, []);
 
   useEffect(() => {
     Axios.post('http://localhost:3003/chad', {
-      CropName: selectedItem,
-      
+      CropName: selected,
     })
       .then((response) => {
         if (Array.isArray(response.data) && response.data.length > 0) {
@@ -22,13 +41,30 @@ const Listing = () => {
           console.log(cropData);
           setDetails(cropData); // Set the data in the state
         } else {
-          console.error('Data structure does not include introduction.');
+          // If data is not found in '/chad', try '/newchad'
+          return Axios.post('http://localhost:3003/newchad', {
+            CropName: selected,
+          });
+        }
+      })
+      .then((response) => {
+        if (response) {
+          if (Array.isArray(response.data) && response.data.length > 0) {
+            const cropData = response.data[0];
+            console.log(cropData);
+            setDetails(cropData); // Set the data in the state
+          } else {
+            console.error('Data structure does not include introduction.');
+          }
         }
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
   }, []);
+  
+
+
 
   // Function to toggle the expanded state of a section
   const toggleSection = (sectionName) => {

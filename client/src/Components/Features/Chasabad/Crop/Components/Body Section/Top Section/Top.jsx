@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Axios from 'axios';
 import './top.css'
 import { BiSearchAlt } from 'react-icons/bi'
 import { TbMessageCircle } from 'react-icons/tb'
@@ -17,26 +18,51 @@ import potato_farm from '../../../Asset/potato_farm.jpg'
 
 const Top = () => {
   const { selectedItem } = useSelectedItem();
+  const [details, setDetails] = useState({});
+  const select = localStorage.getItem('crop');
   let selectVideo = () => {
-    if (selectedItem === 'ধান') {
+    if (select === 'ধান') {
       return paddy;
     }
-    if (selectedItem === 'আলু') {
+    if (select === 'আলু') {
       return potato;
     }
-    if (selectedItem === 'টমেটো') {
+    if (select === 'টমেটো') {
       return tomato;
     }
-    if (selectedItem === 'বেগুন') {
+    if (select === 'বেগুন') {
       return brinjal;
     }
+    
+    
     // Debugging: Log the selected video URL
-    console.log('Selected Video URL:', 'No video found for', selectedItem);
+    console.log('Selected Video URL:', 'No video found for', select);
+    return null;
   };
 
   const videoSrc = selectVideo();
   console.log('Final Video Source:', videoSrc);
 
+    useEffect(() => {
+      Axios.post('http://localhost:3003/crop', {
+        CropName: select,
+        
+      })
+        .then((response) => {
+          if (Array.isArray(response.data) && response.data.length > 0) {
+            const cropData = response.data[0];
+            console.log(cropData);
+            setDetails(cropData); // Set the data in the state
+          } else {
+            console.error('Data structure does not include introduction.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+        });
+    }, []);
+  
+  
   return (
     <div className="topSection">
       <div className="headerSection flex">
@@ -44,25 +70,33 @@ const Top = () => {
           <h1> চাষাবাদ </h1>
           <p>চাষাবাদ সেকশনে আপনাকে স্বাগতম </p>
         </div>
-        <div className="searchBar flex">
+        {/* <div className="searchBar flex">
           <input type='text' placeholder='ড্যাশবোর্ডে খুঁজুন' />
           <BiSearchAlt className="icon" />
-        </div>
+        </div> */}
 
-        <div className="adminDiv flex">
+        {/* <div className="adminDiv flex">
           <TbMessageCircle className="icon" />
           <MdOutlineNotificationsNone className="icon" />
           <div className="adminImage">
             <img src={img} alt='Admin Image' />
           </div>
-        </div>
+        </div> */}
 
       </div>
 
       <div className="vid">
       <br></br>
       <br></br>
-            <center><video src={videoSrc} autoPlay loop muted></video></center>
+      {videoSrc ? (
+          <center>
+            <video src={videoSrc} autoPlay loop muted></video>
+          </center>
+        ) : (
+          <center>
+            <img id='chasabad_img' src={`data:image/jpeg;base64, ${details.image}`} alt="Crop Image"  />
+          </center>
+        )}
             <br></br>
             <br></br>
           </div>

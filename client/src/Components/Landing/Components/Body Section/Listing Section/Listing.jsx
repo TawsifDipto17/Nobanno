@@ -103,7 +103,7 @@ const Listing = () => {
         <div className="featuredSellers">
           <div className="heading flex">
             <h3>আজকের ব্লগ </h3>
-            <button className='btn flex' onClick={() => navigateTo('/news')} >
+            <button className='btn flex' onClick={() => navigateTo('/blog')} >
             আরো দেখুন <BsArrowRightShort className='icon'/>
             </button>
           </div>

@@ -61,17 +61,17 @@ app.post("/updateDisease", (req, res) => {
   console.log(symptom);
   console.log(cure);
 
-  let SQL = "insert into crop (name,image) values(?,?)";
-  let Values = [name, null];
+  // let SQL = "insert into crop (name,image) values(?,?)";
+  // let Values = [name, null];
 
   const db_class = require("./db_class");
   const db = new db_class("test");
 
-  db.Insert(SQL, Values)
-    .then((success) => {
-      if (success) {
-        console.log("Successful insert in Crop Name table");
-        //res.send({ message: 'Crop added!' });
+  // db.Insert(SQL, Values)
+  //   .then((success) => {
+  //     if (success) {
+  //       console.log("Successful insert in Crop Name table");
+  //       //res.send({ message: 'Crop added!' });
 
         let SQL1 =
           "insert into cropDisease (name, disease, symptom, cure) VALUES(?, ?, ?, ?)";
@@ -97,13 +97,13 @@ app.post("/updateDisease", (req, res) => {
           .catch((error) => {
             console.error("Error during Crop Insertion :", error);
           });
-      } else {
-        console.log("Unsuccessful insert in crop disease table");
-      }
-    })
-    .catch((error) => {
-      console.error("Error during Crop Name Insertion :", error);
-    });
+    //   } else {
+    //     console.log("Unsuccessful insert in crop disease table");
+    //   }
+    // })
+    // .catch((error) => {
+    //   console.error("Error during Crop Name Insertion :", error);
+    // });
 
   // const profilePicture = req.files['profilePicture'] ? req.files['profilePicture'][0] : null;
 

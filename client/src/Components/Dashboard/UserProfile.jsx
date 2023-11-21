@@ -4,6 +4,7 @@ import './UserProfile.css';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import video from '../../../assets/grape.mp4';
+import { FaArrowLeft } from "react-icons/fa";
 
 function UserProfile() {
   const navigateTo = useNavigate();
@@ -96,7 +97,7 @@ function UserProfile() {
       </video>
       <button id='back' onClick={()=>{
         navigateTo('/dashboard');
-      }}>Back</button>
+      }}><FaArrowLeft/></button>
       <form action=''>
         {data.map((item,index) => (
       <div className="user-profile" key={index}>
@@ -113,10 +114,10 @@ function UserProfile() {
           
         />
         <h1>{item.username}</h1>
-        <p>Email: {email}</p>
+        <p>ইমেইল: {email}</p>
         
           <label>
-            Username:
+          ব্যবহারকারীর নাম:
             <input
               type="text"
               id="username"
@@ -127,7 +128,7 @@ function UserProfile() {
             />
           </label>
           <label>
-            Contact:
+          যোগাযোগ:
             <input
               type="text"
               id="contact"
@@ -140,7 +141,7 @@ function UserProfile() {
           </label>
           <div>
           <button type="submit" onClick={createUser} disabled={fileSizeError}>
-              Save
+          সংরক্ষণ
           </button>
           </div>
         

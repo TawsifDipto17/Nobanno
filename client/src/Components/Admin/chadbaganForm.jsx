@@ -5,6 +5,7 @@ import './chadbaganForm.css';
 const ChadbaganForm = () => {
   const [formData, setFormData] = useState({
     name: '',
+    image: null,
     introduction: '',
     selectcSpecies: '',
     growingMethod: '',
@@ -19,28 +20,87 @@ const ChadbaganForm = () => {
     storage: ''
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+  const cropNames = [
+    "ধান",
+    "গম",
+    "পাট",
+    "আলু",
+    "মুগ",
+    "কাঁঠাল",
+    "আম",
+    "কলা",
+    "সরিষা",
+    "তিল",
+    "শিম",
+    "টমেটো",
+    "পেঁপে",
+    "বাঁধাকপি",
+    "মিষ্টি আলু",
+    "গোলাপ",
+    "বেগুন",
+    "পটল",
+    "লাউ",
+    "সিম",
+    "লেবু",
+    "পেয়ারা",
+    "কমলা",
+    "মুলা",
+    "পটল",
+    "লাউ",
+    "লাল শাক",
+  
+// Add more crop names as needed
+];
+
+const handleChange = (e) => {
+  const { name, value, files } = e.target;
+
+  // If the input is of type 'file', update 'image' with the file object
+  const newValue = e.target.type === 'file' ? e.target.files[0] : value;
+
+  setFormData({
+    ...formData,
+    [name]: newValue,
+  });
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Axios.post('http://localhost:3003/updateCropData', formData)
+    const data = new FormData();
+
+    data.append('name', formData.name);
+    data.append('image', formData.image);
+    data.append('introduction', formData.introduction);
+    data.append('selectcSpecies', formData.selectcSpecies);
+    data.append('growingMethod', formData.growingMethod);
+    data.append('selectSoil', formData.selectSoil);
+    data.append('growingSeason', formData.growingSeason);
+    data.append('seed', formData.seed);
+    data.append('climate', formData.climate);
+    data.append('fertilizer', formData.fertilizer);
+    data.append('irrigation', formData.irrigation);
+    data.append('care', formData.care);
+    data.append('collect', formData.collect);
+    data.append('storage', formData.storage);
+
+    console.log(data);
+    
+
+    Axios.post('http://localhost:3003/updateroofCropData', data, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
       .then((response) => {
-        console.log("Success!");
+        console.log('Success!');
         // Optionally, you can handle success behavior here, e.g., show a success message to the user
-          window.location.reload(); // Reload the page after successful submission
+        window.location.reload(); // Reload the page after successful submission
       })
       .catch((error) => {
-        console.error("Error occurred:", error);
+        console.error('Error occurred:', error);
         // Optionally, you can handle error behavior here, e.g., show an error message to the user
       });
   };
-
 
 
   return (
@@ -49,9 +109,24 @@ const ChadbaganForm = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Crop Name:</label>
-          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+         {/* Dropdown selection for Crop Name */}
+         <select id="name" name="name" value={formData.name} onChange={handleChange} required>
+              <option value="" disabled>Select a crop</option>
+              {cropNames.map((crop, index) => (
+                <option key={index} value={crop}>
+                  {crop}
+                </option>
+              ))}
+            </select>
         </div>
         <br />
+
+        <div>
+          <label htmlFor='image'>Image:</label>
+          <input type='file' id='image' name='image' accept='image/*' onChange={handleChange} />
+        </div>
+        <br />
+
         <div>
           <label htmlFor="introduction">Introduction:</label>
           <textarea id="introduction" name="introduction" value={formData.introduction} onChange={handleChange}></textarea>

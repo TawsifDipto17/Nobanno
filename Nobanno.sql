@@ -1,8 +1,3 @@
-CREATE TABLE `crop` (
-  `name` varchar(100) NOT NULL,
-  image longblob,
-  PRIMARY KEY (name)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 
 CREATE TABLE BlogPost(
     title varchar(255) NOT NULL PRIMARY KEY,
@@ -16,47 +11,58 @@ CREATE TABLE News(
     link varchar(2000) NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 
+CREATE TABLE crop (
+  name varchar(100) NOT NULL,
+  image longblob,
+  PRIMARY KEY (name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 
 
-CREATE TABLE `cropProduction` (
-  `name` varchar(100) NOT NULL,
-  `introduction` longtext DEFAULT NULL,
-  `selectcSpecies` longtext DEFAULT NULL,
-  `growingMethod` longtext DEFAULT NULL,
-  `selectSoil` longtext DEFAULT NULL,
-  `growingSeason` longtext DEFAULT NULL,
-  `seed` longtext DEFAULT NULL,
-  `climate` longtext DEFAULT NULL,
-  `fertilizer` longtext DEFAULT NULL,
-  `irrigation` longtext DEFAULT NULL,
-  `care` longtext DEFAULT NULL,
-  `collect` longtext DEFAULT NULL,
-  FOREIGN KEY (name) REFERENCES crop(name)
+CREATE TABLE cropProduction (
+  name varchar(100) NOT NULL,
+  image longblob,
+  introduction longtext DEFAULT NULL,
+  selectcSpecies longtext DEFAULT NULL,
+  growingMethod longtext DEFAULT NULL,
+  selectSoil longtext DEFAULT NULL,
+  growingSeason longtext DEFAULT NULL,
+  seed longtext DEFAULT NULL,
+  climate longtext DEFAULT NULL,
+  fertilizer longtext DEFAULT NULL,
+  irrigation longtext DEFAULT NULL,
+  care longtext DEFAULT NULL,
+  collect longtext DEFAULT NULL,
+  storage longtext DEFAULT NULL,
+  PRIMARY KEY (name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 
 
 
-CREATE TABLE `rooftopCropProduction` (
-  `name` varchar(100) NOT NULL,
-  `introduction` longtext DEFAULT NULL,
-  `selectcSpecies` longtext DEFAULT NULL,
-  `growingMethod` longtext DEFAULT NULL,
-  `selectSoil` longtext DEFAULT NULL,
-  `growingSeason` longtext DEFAULT NULL,
-  `seed` longtext DEFAULT NULL,
-  `fertilizer` longtext DEFAULT NULL,
-  `irrigation` longtext DEFAULT NULL,
-  `care` longtext DEFAULT NULL,
-  FOREIGN KEY (name) REFERENCES crop(name)
+CREATE TABLE rooftopCropProduction (
+  name varchar(100) NOT NULL,
+  image longblob,
+  introduction longtext DEFAULT NULL,
+  selectcSpecies longtext DEFAULT NULL,
+  growingMethod longtext DEFAULT NULL,
+  selectSoil longtext DEFAULT NULL,
+  growingSeason longtext DEFAULT NULL,
+  seed longtext DEFAULT NULL,
+  climate longtext DEFAULT NULL,
+  fertilizer longtext DEFAULT NULL,
+  irrigation longtext DEFAULT NULL,
+  care longtext DEFAULT NULL,
+  collect longtext DEFAULT NULL,
+  storage longtext DEFAULT NULL,
+  PRIMARY KEY (name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 
 
-CREATE TABLE `cropDisease` (
+CREATE TABLE cropDisease (
     `name`varchar(100) NOT NULL,
+    image longblob,
     `disease`longtext DEFAULT NULL,
-    `symptom` longtext DEFAULT NULL,
-    `cure` longtext DEFAULT NULL,
-    FOREIGN KEY (name) REFERENCES crop(name)
+    symptom longtext DEFAULT NULL,
+    cure longtext DEFAULT NULL  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 
 

@@ -273,6 +273,7 @@
   transform: scale(1.02);
 }
 
+
 @media screen and (max-width: 990px) {
   .cardSection {
     flex-direction: column;
@@ -335,6 +336,7 @@
   .cardSection .leftCard .main .imgDiv {
     display: none;
   }
+ 
 }
 @media screen and (max-width: 390px) {
   .topSection .cardSection .rightCard {

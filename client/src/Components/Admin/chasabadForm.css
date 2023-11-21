@@ -55,6 +55,18 @@ textarea {
  
 }
 
+
+.mainDiv select{
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 15px;
+    height: 40px; /* Adjust the height as needed */
+    width: 500px; /* Adjust the width as needed */
+}
+
 .mainDiv button {
   background-color: #4caf50;
   color: white;

@@ -339,7 +339,7 @@
   height: 175px;
   line-height: 20px;
   z-index: 100;
-  background-image: url('../../../Asset/widgetbg.png');
+  background-image: url('../../../Asset/weatherbg.jpg');
   background-size: cover;
   border: 1px solid #ccc;
   padding: 10px;

@@ -19,9 +19,7 @@ const Listing = () => {
 
       <div className="heading flex">
         <h1>নির্বাচিত </h1>
-        <button className='btn flex'>
-          আরো দেখুন <BsArrowRightShort className='icon'/>
-        </button>
+        
       </div>
 
       <div className="secContainer flex">
