@@ -12,7 +12,8 @@ import img2 from '../../../Asset/tree.png'
 import rose from '../../../Asset/rose.mp4'
 import tomato from '../../../Asset/tomato.mp4'
 import paddy from '../../../Asset/paddy.mp4'
-import brinjal from '../../../Asset//brinjal.mp4'
+import brinjal from '../../../Asset/brinjal.mp4'
+import dragon from '../../../Asset/dragonfruit.mp4'
 import potato_farm from '../../../Asset/potato_farm.jpg'
 
 
@@ -23,6 +24,9 @@ const Top = () => {
   let selectVideo = () => {
     if (select === 'ধান') {
       return paddy;
+    }
+    if (select === 'ড্রাগন ফল') {
+      return dragon;
     }
     if (select === 'গোলাপ') {
       return rose;

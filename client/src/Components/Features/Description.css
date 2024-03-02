@@ -1,77 +1,108 @@
+/* Default styles */
 .video-containerdes {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    /* overflow-y:scroll; */
-    
-    
-  }
-  
-  .video-containerdes h2{
-    color: white;
-    text-align: center;
-    font-size: 40px;
-    text-shadow: 1px 1px 2px black;
-  }
-  
-  
-  #video-backgrounddes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: aqua;
+}
+
+.video-containerdes h2 {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 1px 1px 2px black;
+}
+
+#video-backgrounddes {
+  opacity: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#back {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#back:hover {
+  background-color: #ffffff;
+  color: green;
+  border-color: transparent;
+}
+
+.description-container {
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bolder;
+  text-shadow: 2px 2px 0.1px black;
+}
+
+.description-container h2 {
+  color: black;
+  text-shadow: none;
+}
+
+.desc_para {
+  margin: 30px;
+  text-align: justify;
+  line-height: 2;
+  margin-top: 20px;
+}
+
+.desc_para p {
+  font-size: 22px;
+}
+
+.desc_para span {
+  text-shadow: 1px 1px 0.1px black;
+  font-size: 18px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .video-containerdes {
+      background-color: transparent; /* Set background color to transparent */
   }
 
-  
-  
-  
-  
-  #back{
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  .video-containerdes h2 {
+      font-size: 32px;
   }
 
-  #back:hover{
-    background-color: #ffffff; /* White background on hover */
-    color: green;
-    border-color: transparent;
+  #back {
+      font-size: 14px;
   }
 
   .description-container {
-    color: bisque;
-    margin-top: 20px;
-    text-align: center;
-    text-shadow: 2px 2px 2px black;
-  }
-  .desc_para {
-    margin: 30px;
-    text-align: justify;
-    /* font-size: 18px; */
-    line-height: 2;
-    margin-top: 20px;
-  }
-
-  .desc_para p{
-    font-size: 22px;
-  }
-  .desc_para span{
       font-size: 18px;
   }
-  
-  
-  
-  
+
+  .desc_para {
+      margin: 10px;
+      font-size: 18px;
+  }
+
+  .desc_para p {
+      font-size: 20px;
+  }
+
+  .desc_para span {
+      font-size: 16px;
+  }
+}

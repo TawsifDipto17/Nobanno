@@ -102,7 +102,7 @@ app.post("/newchad", (req, res) => {
 
 
 app.post("/updateCropData",upload.fields([{ name: 'image', maxCount: 1 } ]), (req, res) => {
-  console.log("inside")
+  
   console.log(req.body);
 
   const name = req.body.name;

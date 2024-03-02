@@ -48,6 +48,7 @@ const ChasabadForm = () => {
     "পটল",
     "লাউ",
     "লাল শাক",
+    "ড্রাগন ফল",
   ];
 
   const handleChange = (e) => {

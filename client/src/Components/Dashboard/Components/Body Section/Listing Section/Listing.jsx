@@ -56,11 +56,13 @@ const Listing = () => {
         </div>
         </Link>
 
+        <Link to={'/chasabad'}>
         <div className="singleItem">
           <AiOutlineHeart className='icon'/>
             <img src={rose} alt="listPlant" />
             <h3><a href="/chasabad">গোলাপ</a></h3>
         </div>
+        </Link>
 
       </div>
 

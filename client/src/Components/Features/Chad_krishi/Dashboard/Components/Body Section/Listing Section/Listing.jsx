@@ -52,13 +52,13 @@ const Listing = () => {
         </div>
         </Link >
 
-        <Link to={'/chad'}>
+        {/* <Link to={'/chad'}>
         <div className="singleItem" onClick={() => {selectItem('পেয়ারা'); localStorage.setItem('crop','পেয়ারা');}}>
           <AiOutlineHeart className='icon'/>
             <img src={guava} alt="listPlant" />
             <h3>পেয়ারা</h3>
         </div>
-        </Link >
+        </Link > */}
 
         <Link to={'/chad'}>
         <div className="singleItem" onClick={() => {selectItem('টমেটো'); localStorage.setItem('crop','টমেটো'); }}>

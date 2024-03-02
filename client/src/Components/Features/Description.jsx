@@ -9,6 +9,7 @@ import { FaArrowLeft } from "react-icons/fa";
 const Description = () => {
 
   const navigateTo = useNavigate();
+  
 
   let email = localStorage.getItem('email');
   let logged = localStorage.getItem('logged');

@@ -48,6 +48,7 @@ const ChadbaganForm = () => {
     "পটল",
     "লাউ",
     "লাল শাক",
+    "ড্রাগন ফল",
   
 // Add more crop names as needed
 ];

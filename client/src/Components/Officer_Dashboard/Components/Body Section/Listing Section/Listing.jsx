@@ -3,6 +3,7 @@ import './listing.css'
 import {BsArrowRightShort} from 'react-icons/bs'
 import {AiFillHeart} from 'react-icons/ai'
 import { AiOutlineHeart } from 'react-icons/ai'
+import { Link , useNavigate} from 'react-router-dom'
 
 import paddy from '../../../Asset/Paddy.png'
 import potato from '../../../Asset/potato.png'
@@ -12,8 +13,10 @@ import img2 from '../../../Asset/news1.jpg'
 import img3 from '../../../Asset/news2.jpg'
 import img4 from '../../../Asset/blog1.png'
 import img5 from '../../../Asset/blog2.png'
-import { useNavigate } from 'react-router-dom'
+import { useSelectedItem } from '../../../../../SelectedItemContext'
+
 const Listing = () => {
+  const { selectItem } = useSelectedItem();
   const navigateTo = useNavigate();
   return (
    
@@ -28,29 +31,39 @@ const Listing = () => {
 
       <div className="secContainer flex">
         
-        <div className="singleItem">
+        
+      <Link to={'/chasabad'}>
+        <div className="singleItem" onClick={() => selectItem('ধান')}>
+        
           <AiFillHeart className='icon'/>
             <img src={paddy} alt="listPlant" />
-            <h3><a href="/chasabad">ধান </a></h3>
+            <h3>ধান</h3>
         </div>
+        </Link>
 
-        <div className="singleItem">
+        <Link to={'/chasabad'}>
+        <div className="singleItem" onClick={() => selectItem('আলু')}>
           <AiOutlineHeart className='icon'/>
             <img src={potato} alt="listPlant" />
-            <h3><a href="/chasabad">আলু</a></h3>
+            <h3>আলু</h3>
         </div>
+        </Link>
 
+        <Link to={'/chasabad'}>
         <div className="singleItem">
           <AiOutlineHeart className='icon'/>
             <img src={tomato} alt="listPlant" />
             <h3><a href="/chasabad">টমেটো</a></h3>
         </div>
+        </Link>
 
+        <Link to={'/chasabad'}>
         <div className="singleItem">
           <AiOutlineHeart className='icon'/>
             <img src={rose} alt="listPlant" />
             <h3><a href="/chasabad">গোলাপ</a></h3>
         </div>
+        </Link>
 
       </div>
 

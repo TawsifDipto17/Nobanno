@@ -5,6 +5,7 @@ import './diseaseForm.css';
 const DiseaseForm = () => {
   const [formData, setFormData] = useState({
     name: '',
+    image: null, // New field for the image
     disease: '',
     symptom: '',
     cure: ''
@@ -38,21 +39,42 @@ const DiseaseForm = () => {
     "পটল",
     "লাউ",
     "লাল শাক",
+    "ড্রাগন ফল",
   
 // Add more crop names as needed
 ];
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+const handleChange = (e) => {
+  const { name, value, files } = e.target;
+
+  // If the input is of type 'file', update 'image' with the file object
+  const newValue = e.target.type === 'file' ? e.target.files[0] : value;
+
+  setFormData({
+    ...formData,
+    [name]: newValue,
+  });
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Axios.post('http://localhost:3004/updateDisease', formData)
+    const data = new FormData();
+    data.append('name',formData.name);
+    data.append('image',formData.image);
+    data.append('disease',formData.disease);
+    data.append('symptom',formData.symptom);
+    data.append('cure',formData.cure);
+
+    console.log(data);
+
+
+
+
+    Axios.post('http://localhost:3004/updateDisease', data,{
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
       .then((response) => {
         console.log("Success!");
         // Optionally, you can handle success behavior here, e.g., show a success message to the user
@@ -83,6 +105,13 @@ const DiseaseForm = () => {
             </select>
         </div>
         <br />
+        
+        <div>
+          <label htmlFor='image'>Image:</label>
+          <input type='file' id='image' name='image' accept='image/*' onChange={handleChange} />
+        </div>
+        <br />
+
         <div>
           <label htmlFor="disease">Disease Name:</label>
           <textarea id="disease" name="disease" value={formData.disease} onChange={handleChange}></textarea>

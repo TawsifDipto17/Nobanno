@@ -1,5 +1,10 @@
 const express = require('express')
 const cors = require('cors')
+const multer = require('multer'); 
+const storage = multer.memoryStorage(); 
+const upload = multer({ storage: storage },{
+    limits: { fileSize: 10 * 1024 * 1024 }, // Set the limit to 10MB or adjust to your requirements
+  });
 
 
 const app = express()
@@ -10,6 +15,42 @@ app.use(cors())
 app.listen(3004, () => {
     console.log('Disease Server is running on port 3004')
 })
+
+
+app.get('/diseaseData', (req, res) => {
+
+  const Values = [];
+
+  const db_class = require('./db_class');
+  const db = new db_class('test');
+  
+  const SQL = 'SELECT distinct name, TO_BASE64(image) AS image_base64 FROM cropdisease';
+  console.log(SQL)
+  db.GetSelect(SQL,Values)
+    .then(result => {
+      if (result !== false) {
+        // Data retrieval was successful
+
+        const getData = result.map((row) => {
+          return {
+            name: row.name,
+            image: row.image_base64
+          };
+        });
+
+        // console.log('Query Result:', getData);
+        res.json(getData);
+      } else {
+        // An error occurred
+        console.log('Error occurred during data retrieval.');
+      }
+    })
+    .catch(error => {
+      console.error('Error during query:', error);
+    });
+  
+})
+
 
 
 
@@ -28,7 +69,7 @@ app.post('/disease', (req, res) => {
     const db_class = require('./db_class');
     const db = new db_class('test');
     
-    const SQL = "SELECT name,disease,symptom,cure FROM cropDisease where name=? GROUP BY name,disease,symptom,cure ";
+    const SQL = "SELECT name,TO_BASE64(image) AS image,disease,symptom,cure FROM cropDisease where name=? GROUP BY name,image,disease,symptom,cure ";
     
     db.GetSelect(SQL,Values)
       .then(result => {
@@ -48,10 +89,13 @@ app.post('/disease', (req, res) => {
 })
 
 
-app.post("/updateDisease", (req, res) => {
+
+
+app.post("/updateDisease",upload.fields([{ name: 'image', maxCount: 1 } ]), (req, res) => {
   console.log(req.body);
 
   const name = req.body.name;
+  const sentImage = req.files['image'] ? req.files['image'][0] : null;
   const disease = req.body.disease;
   const symptom = req.body.symptom;
   const cure = req.body.cure;
@@ -74,9 +118,10 @@ app.post("/updateDisease", (req, res) => {
   //       //res.send({ message: 'Crop added!' });
 
         let SQL1 =
-          "insert into cropDisease (name, disease, symptom, cure) VALUES(?, ?, ?, ?)";
+          "insert into cropDisease (name,image, disease, symptom, cure) VALUES(?,?, ?, ?, ?)";
         let Values1 = [
           name,
+          sentImage.buffer,
           disease,
           symptom,
           cure,
