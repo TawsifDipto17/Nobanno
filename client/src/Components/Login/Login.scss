@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+//default styling
+
+:root{
+
+    --primaryColor: hs1(94,55%,56%);
+    --hoverCOlor: hs1(93,75%,76%);
+    --paleGreen: hs1(96,75%, 89%);
+    --whiteColor: hs1(0,0%,100%);
+    --blackColor: hs1(0,0%,18%);
+    --greyText: hs1(0,0%,75%);
+    --bgColor: hs1(113,11%,85%);
+    --inputColor: hs1(330,12%,97%);
+    --inputColor: hs1(154,14%,90%);
+
+    /*Font and Typography*/
+
+    --biggestFontSize: 2.5 rem;
+    --h1FontSize: 1.5 rem;
+    --h2FontSize: 1.25 rem;
+    --h3FontSize: 1 rem;
+    --normalFontSize: .938 rem;
+    --smallFontSize: .813 rem;
+    --smallestFontSize: .75 rem;
+}
+
+.flex{
+    display: grid;
+    align-items: center;
+}
+
+.grid{
+    display:grid;
+    align-items:center;
+    gap:1.5 rem;
+}
+html{
+    font-size: 90%;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+.icon{
+    font-size: var(--h2FontSize);
+    cursor: pointer;
+}
+
+img,video{
+    height:auto;
+    width:100%;
+}
+
+.message{
+    display:none;
+}
+.showMessage{
+    display: block;
+    color:var(--whiteColor);
+    background: rgb(255,0,0);
+    border-radius: 3px;
+    text-align: center;
+}
+.btn{
+    border:none;
+    outline: none;
+    cursor:pointer;
+    border-radius: 8px;
+    padding: .8 rem 1 rem;
+    color: var(--greyText);
+
+}
+.btn .icon{
+    margin-left: .5rem;
+}
+
+.btn:hover{
+    color: var(--primaryColor);
+    background: var(--paleGreen);
+}
+
+.loginPage{
+    height: 100vh;
+    width:100%;
+    margin:auto;
+    border-radius: 10 px;
+    overflow: hidden;
+    box-shadow: 0 7px 50px rgb(214,223,213);
+}
+.container{
+    height:75vh;
+    width: 60%;
+    margin:auto;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: hsl(0, 0%, 91%);
+}

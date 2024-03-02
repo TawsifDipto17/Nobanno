@@ -1,0 +1,347 @@
+/* Login.css */
+
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap");
+
+/* Reset and Global Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 90%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Color Variables */
+:root {
+  --primaryColor: hsl(94, 55%, 56%);
+  --hoverColor: hsl(93, 75%, 76%);
+  --paleGreen: hsl(96, 75%, 89%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --greyText: hsl(0, 0%, 25%);
+  --bgColor: hsl(105, 71%, 44%);
+}
+
+/* Layout and Flexbox */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Icons */
+.icon {
+  font-size: var(--h2FontSize);
+  cursor: pointer;
+}
+
+#chasabad_img{
+  max-height: 10%;
+  max-width:60% ;
+  width: 60%;
+  height: auto;
+}
+
+#chad_img{
+  
+  max-height: 10%;
+  max-width:60% ;
+  width: 60%;
+  height: auto;
+}
+/* Images and Videos */
+img{
+  width:50px;
+  height: 50px;
+}
+video {
+  height: auto;
+  width: 50%;
+}
+
+/* Messages and Alerts */
+.message {
+  display: none;
+}
+
+.showMessage {
+  display: block;
+  color: var(--whiteColor);
+  padding: 10px;
+  background: rgba(255, 0, 0, 0.443);
+  border-radius: 3px;
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: var(--greyText);
+  transition: color 0.3s;
+  background: 0.3s;
+}
+
+.btn .icon {
+  margin-left: 0.5rem;
+}
+
+.btn:hover {
+  color: var(--primaryColor);
+  background: var(--paleGreen);
+}
+
+/* Login Page Container */
+.loginPage {
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 7px 50px rgb(214, 223, 213);
+}
+
+/* Login Container */
+.loginPage .container {
+  height: 75vh;
+  width: 60%;
+  margin: auto;
+  justify-content: space-between;
+  border-radius: 10px;
+  background: hsl(0, 79%, 16%);
+  display: flex;
+}
+
+/* Video Section */
+.loginPage .container .videoDiv {
+  position: relative;
+  flex-basis: 50%;
+  padding: 0 1.5rem;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loginPage .container .videoDiv video,
+.loginPage .container .videoDiv .footerDiv {
+  position: absolute;
+}
+
+.loginPage .container .videoDiv video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.loginPage .container .videoDiv .textDiv {
+  position: relative;
+}
+
+.loginPage .container .videoDiv .textDiv .title {
+  color: var(--whiteColor);
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.loginPage .container .videoDiv .textDiv p {
+  color: var(--whiteColor);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.loginPage .container .videoDiv .footerDiv {
+  bottom: 10px;
+  padding: 0 1rem;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.97);
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  backdrop-filter: blur(1px);
+  border-radius: 10px;
+}
+
+.loginPage .container .videoDiv .footerDiv .text {
+  color: var(--whiteColor);
+}
+
+.loginPage .container .videoDiv .footerDiv .btn {
+  background: var(--whiteColor);
+  color: var(--primaryColor);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 400;
+  transition: 0.3s ease;
+}
+
+.loginPage .container .videoDiv .footerDiv .btn:hover {
+  background: var(--hoverColor);
+  color: var(--blackColor);
+}
+
+.loginPage .container .videoDiv .footerDiv .btn:hover .icon {
+  color: var(--blackColor);
+  transform: translateX(5px);
+}
+
+.loginPage .container .videoDiv .footerDiv .forgotPassword {
+  font-size: 11px;
+  color: var(--blackColor);
+  opacity: 0.7;
+  text-align: center;
+}
+
+.loginPage .container .videoDiv .footerDiv .forgotPassword a {
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 1;
+}
+
+
+/* ... */
+
+/* Login Container */
+
+.loginPage .container {
+  height: 85vh;
+  width: 70%;
+  margin: auto;
+  justify-content: space-between;
+  border-radius: 10px;
+  background: hsl(107, 21%, 79%);
+  display: flex;
+}
+
+/* Video Section */
+.loginPage .container .videoDiv {
+  position: relative;
+  flex-basis: 50%;
+  padding: 0 1.5rem;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Form Section */
+.loginPage .container .formDiv {
+  flex: 1; /* Take remaining available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.loginPage .container .formDiv .headerDiv {
+  display: flex;
+  align-items: center; /* Vertically align logo and text */
+  margin-bottom: 1rem;
+}
+
+.loginPage .container .formDiv .headerDiv img {
+  margin-right: 0.5rem; /* Add some spacing between the logo and text */
+}
+
+.loginPage .container .formDiv .headerDiv h3 {
+  font-size: var(--h2FontSize);
+  font-weight: 500;
+}
+
+
+.loginPage .container .formDiv .inputDiv label {
+  color: var(--blackColor);
+  font-weight: 500;
+}
+
+.loginPage .container .formDiv .inputDiv .input {
+  display: flex;
+  align-items: center;
+  background-color: var(--whiteColor);
+  border: 1px solid var(--greyText);
+  border-radius: 8px;
+  padding: 0.3rem;
+  transition: border-color 0.3s;
+}
+
+.loginPage .container .formDiv .inputDiv .input:hover {
+  border-color: var(--primaryColor);
+}
+
+.loginPage .container .formDiv .inputDiv .input input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 0.3rem;
+  background: transparent;
+}
+
+.loginPage .container .formDiv .inputDiv .iconDiv {
+  padding: 0.5rem;
+  color: var(--primaryColor);
+}
+
+.knowYou{
+    color: red;
+}
+
+
+
+/* Responsive Styling */
+@media screen and (max-width: 960px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .videoDiv,
+  .formDiv {
+    width: 100%;
+    text-align: center;
+  }
+
+  .videoDiv {
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  .btn {
+    width: auto;
+  }
+}

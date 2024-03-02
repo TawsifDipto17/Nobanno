@@ -1,0 +1,142 @@
+import { useState, useRef } from "react";
+import { Webcam } from "../utils/webcam";
+
+
+
+  const  ButtonHandler = ({ imageRef, cameraRef, videoRef }) => {
+    const [streaming, setStreaming] = useState(null); // streaming state
+    const inputImageRef = useRef(null); // video input reference
+    const inputVideoRef = useRef(null); // video input reference
+    const webcam = new Webcam(); // webcam handler
+  
+    // closing image
+    const closeImage = () => {
+      const url = imageRef.current.src;
+      imageRef.current.src = "#"; // restore image source
+      URL.revokeObjectURL(url); // revoke url
+  
+      setStreaming(null); // set streaming to null
+      inputImageRef.current.value = ""; // reset input image
+      imageRef.current.style.display = "none"; // hide image
+  
+      const cure_disease=document.getElementById("cure_disease")
+      const cure_symptom=document.getElementById("cure_symptom")
+      const cure_cure=document.getElementById("cure_cure")
+    
+      cure_disease.innerHTML=" "
+      cure_symptom.innerHTML=" "
+      cure_cure.innerHTML=" "
+    };
+  
+    // closing video streaming
+    const closeVideo = () => {
+      const url = videoRef.current.src;
+      videoRef.current.src = ""; // restore video source
+      URL.revokeObjectURL(url); // revoke url
+  
+      setStreaming(null); // set streaming to null
+      inputVideoRef.current.value = ""; // reset input video
+      videoRef.current.style.display = "none"; // hide video
+  
+  
+  const cure_disease=document.getElementById("cure_disease")
+  const cure_symptom=document.getElementById("cure_symptom")
+  const cure_cure=document.getElementById("cure_cure")
+  
+      cure_disease.innerHTML=" "
+      cure_symptom.innerHTML=" "
+      cure_cure.innerHTML=" "
+    };
+  
+    return (
+      <div className="btn-container">
+        {/* Image Handler */}
+        <input
+          type="file"
+          accept="image/*"
+          style={{ display: "none" }}
+          onChange={(e) => {
+            const url = URL.createObjectURL(e.target.files[0]); // create blob url
+            imageRef.current.src = url; // set video source
+            imageRef.current.style.display = "block"; // show video
+            setStreaming("image"); // set streaming to video
+          }}
+          ref={inputImageRef}
+        />
+        <button
+          onClick={() => {
+            // if not streaming
+            if (streaming === null) inputImageRef.current.click();
+            // closing image streaming
+            else if (streaming === "image") closeImage();
+            else alert(`একটির বেশি স্ট্রীম পরিচালনা করতে পারে না\nবর্তমানে স্ট্রিমিং হচ্ছে : ${streaming}`); // if streaming video or webcam
+          }}
+        >
+          {streaming === "image" ? "Close" : "Open"} Image
+        </button>
+  
+        {/* Video Handler */}
+        <input
+          type="file"
+          accept="video/*"
+          style={{ display: "none" }}
+          onChange={(e) => {
+            if (streaming === "image") closeImage(); // closing image streaming
+            const url = URL.createObjectURL(e.target.files[0]); // create blob url
+            videoRef.current.src = url; // set video source
+            videoRef.current.addEventListener("ended", () => closeVideo()); // add ended video listener
+            videoRef.current.style.display = "block"; // show video
+            setStreaming("video"); // set streaming to video
+          }}
+          ref={inputVideoRef}
+        />
+        <button
+          onClick={() => {
+            // if not streaming
+            if (streaming === null || streaming === "image") inputVideoRef.current.click();
+            // closing video streaming
+            else if (streaming === "video") closeVideo();
+            else alert(`একটির বেশি স্ট্রীম পরিচালনা করতে পারে না\nবর্তমানে স্ট্রিমিং হচ্ছে : ${streaming}`); // if streaming webcam
+          }}
+        >
+          {streaming === "video" ? "Close" : "Open"} Video
+        </button>
+  
+        {/* Webcam Handler */}
+        <button
+          onClick={() => {
+            // if not streaming
+            if (streaming === null || streaming === "image") {
+              // closing image streaming
+              if (streaming === "image") closeImage();
+              webcam.open(cameraRef.current); // open webcam
+              cameraRef.current.style.display = "block"; // show camera
+              setStreaming("camera"); // set streaming to camera
+            }
+            // closing video streaming
+            else if (streaming === "camera") {
+              webcam.close(cameraRef.current);
+            
+  
+              const cure_disease=document.getElementById("cure_disease")
+              const cure_symptom=document.getElementById("cure_symptom")
+              const cure_cure=document.getElementById("cure_cure")
+  
+  
+              cure_disease.innerHTML=" "
+              cure_symptom.innerHTML=" "
+              cure_cure.innerHTML=" "
+              cameraRef.current.style.display = "none";
+              setStreaming(null);
+            } else alert(`একটির বেশি স্ট্রীম পরিচালনা করতে পারে না\nবর্তমানে স্ট্রিমিং হচ্ছে ${streaming}`); // if streaming video
+          }}
+        >
+          {streaming === "camera" ? "Close" : "Open"} Webcam
+        </button>
+      </div>
+    );
+  };
+  
+  
+
+export default ButtonHandler;

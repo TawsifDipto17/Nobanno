@@ -1,0 +1,160 @@
+:root {
+  --PrimaryColor: hsl(94,59%,35%);
+  --HoverColor: #bdf094;
+  --paleGreen: hsl(96,75%,89%);
+  --whiteColor: hsl(0,0%,100%);
+  --blackColor: hsl(0,0%,18%);
+  --textColor: hsl(240,1%,48%);
+  --bgColor: hsl(220,10%,94%);
+  --greyText: rgb(190,190,190);
+  --inputColor: hsl(330,12%,97%);
+  --itemCardColor: hsl(120,5%,88%);
+  --itemCardHover: hsl(120,27%,87%);
+  --biggestFontSize: 2.5rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: .938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+}
+
+.video-containerbg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  /* overflow-y:scroll; */
+  
+  
+}
+
+.video-containerbg h2{
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 1px 1px 2px black;
+}
+
+
+#video-backgroundbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; 
+}
+
+
+#back{
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#back:hover{
+  background-color: #ffffff; /* White background on hover */
+  color: green;
+  border-color: transparent;
+}
+
+
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.blog-container .card {
+margin-right: 3.5rem ;
+margin-left: 3.5rem ;
+padding: 1rem 1.5rem;
+margin-bottom: 1.3rem;
+border-radius: 1rem;
+background: var(--whiteColor);
+gap: 1rem;
+box-shadow: 0 2px 4px var(--inputColor);
+}
+
+.blog-container .card .users{
+
+  padding-right: 1rem;
+border-right: 2px solid var(--greyText);
+}
+
+.blog-container .card .users img  {
+      width: 150px;
+      height: 100px;
+      border-radius: 5%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      border: 2px solid var(--inputColor);
+      transition: 0.5s ease;
+  }
+
+  .blog-container .card .users img:hover {
+      transform: scale(1.1);
+  }
+
+  
+  .blog-container .card .cardText span a  {
+      text-decoration: none;
+color: var(--blackColor);
+font-weight: 900;
+  }
+
+  .blog-container .card .cardText span a:hover {
+       
+color: var(--PrimaryColor);
+cursor: pointer;
+  } 
+
+
+
+
+/* .blog-post {
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 18px;
+    color: #333;
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+ */
