@@ -1,5 +1,5 @@
 # Nobanno
-Moushum is a One-Stop Farming Solution Website designed to provide farmers, agricultural enthusiasts and stakeholders with a unified hub for resources, expertise, and services. Users can discover crop farming methods, rooftop gardening, expert video chat solutions, AI disease detection and community engagement in farming groups – all in one place.
+Nobanno is a One-Stop Farming Solution Website designed to provide farmers, agricultural enthusiasts and stakeholders with a unified hub for resources, expertise, and services. Users can discover crop farming methods, rooftop gardening, expert video chat solutions, AI disease detection and community engagement in farming groups – all in one place.
 
 ## Motivation
 - Language Barrier: 
